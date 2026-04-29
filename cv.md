@@ -2,7 +2,7 @@
 
 **Cybersecurity Engineer & Full-Stack Developer**
 
-Warsaw, Poland | k.kupaj@aipol.com.pl | [caytec.github.io](https://caytec.github.io)
+Warsaw, Poland | coopaisolutions@gmail.com | +48 692 302 342 | [caytec.github.io](https://caytec.github.io)
 
 ---
 

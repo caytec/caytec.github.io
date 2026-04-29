@@ -139,7 +139,7 @@ const TRANSLATIONS = {
     'mail-reply': 'Reply-To:',
     'mail-subject': 'Subject:',
     'mail-name': 'Name:',
-    'mail-status': 'Ready · Powered by EmailJS · → k.kupaj@aipol.com.pl',
+    'mail-status': 'Ready · Powered by EmailJS · → coopaisolutions@gmail.com',
     'win-contact': 'netcat -contact — Get In Touch',
     'ct-nmap-done': 'Nmap done: 1 IP address (1 host up)',
     'ct-note': '📱 If I don\'t pick up, leave an SMS mentioning recruitment or project. Open to long-term work and collaborations.',
@@ -279,7 +279,7 @@ const TRANSLATIONS = {
     'mail-reply': 'Odpowiedź-do:',
     'mail-subject': 'Temat:',
     'mail-name': 'Imię:',
-    'mail-status': 'Gotowy · Obsługiwane przez EmailJS · → k.kupaj@aipol.com.pl',
+    'mail-status': 'Gotowy · Obsługiwane przez EmailJS · → coopaisolutions@gmail.com',
     'win-contact': 'netcat -kontakt — Skontaktuj się',
     'ct-nmap-done': 'Nmap gotowy: 1 adres IP (1 host aktywny)',
     'ct-note': '📱 Jeśli się nie odbiorę, zostaw SMS wspominając o rekrutacji lub projekcie. Otwarty na pracę długoterminową i współpracę.',
@@ -691,9 +691,9 @@ const FS = {
   '/home/kajetan': { type:'dir', children:['Desktop','projects','.bashrc','README.md'] },
   '/home/kajetan/Desktop': { type:'dir', children:['hackersim.ico','skanujzdrowie.ico','aipol.ico'] },
   '/home/kajetan/projects': { type:'dir', children:['hackersim.io','aipol.com.pl','skanujzdrowie.pl','ctf-tools'] },
-  '/home/kajetan/README.md': { type:'file', content:'Kajetan Kupaj — Cybersecurity Engineer & Founder of aipol.com.pl\nWarsaw, Poland\ncontact: k.kupaj@aipol.com.pl' },
+  '/home/kajetan/README.md': { type:'file', content:'Kajetan Kupaj — Cybersecurity Engineer & Founder of aipol.com.pl\nWarsaw, Poland\ncontact: coopaisolutions@gmail.com' },
   '/home/kajetan/projects/aipol.com.pl': { type:'dir', children:['README.md','services.txt'] },
-  '/home/kajetan/projects/aipol.com.pl/README.md': { type:'file', content:'aipol.com.pl — Polska firma IT\n==============================\nStatus: Aktywnie rozwijana\nUsługi: Security audits, custom software, AI agents, SaaS, sklepy WWW\nKontakt: k.kupaj@aipol.com.pl' },
+  '/home/kajetan/projects/aipol.com.pl/README.md': { type:'file', content:'aipol.com.pl — Polska firma IT\n==============================\nStatus: Aktywnie rozwijana\nUsługi: Security audits, custom software, AI agents, SaaS, sklepy WWW\nKontakt: coopaisolutions@gmail.com' },
   '/home/kajetan/projects/skanujzdrowie.pl': { type:'dir', children:['README.md'] },
   '/home/kajetan/projects/skanujzdrowie.pl/README.md': { type:'file', content:'skanujzdrowie.pl — Testy na raka online\n========================================\nPartner laboratoryjny: Novazym\nStatus: W budowie\nOpis: E-commerce + panel wyników + integracja z laboratorium\nTech: Python, Flask, SQL, Przelewy24' },
   '/etc': { type:'dir', children:['passwd','hostname','kali-release'] },
@@ -775,7 +775,7 @@ const COMMANDS = {
   neofetch:   ()     => NEOFETCH_ART,
   nmap: (args) => {
     const t = args[0] || 'kajetan.kupaj';
-    return `Starting Nmap 7.94\nNmap scan report for ${t}\nHost is up (0.00042s latency).\n\nPORT       STATE  SERVICE\nemail      open   k.kupaj@aipol.com.pl\nphone      open   +48 692 302 342\nlinkedin   open   linkedin.com/in/kajetankupaj\naipol      open   aipol.com.pl (active)\nhackersim  open   hackersim.io (active)\nskanuj     open   skanujzdrowie.pl (building)\nlocation   open   Warsaw, Poland\n\nNmap done: 1 IP address (1 host up)`;
+    return `Starting Nmap 7.94\nNmap scan report for ${t}\nHost is up (0.00042s latency).\n\nPORT       STATE  SERVICE\nemail      open   coopaisolutions@gmail.com\nphone      open   +48 692 302 342\nlinkedin   open   linkedin.com/in/kajetankupaj\naipol      open   aipol.com.pl (active)\nhackersim  open   hackersim.io (active)\nskanuj     open   skanujzdrowie.pl (building)\nlocation   open   Warsaw, Poland\n\nNmap done: 1 IP address (1 host up)`;
   },
   ifconfig: () =>
 `eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
@@ -932,7 +932,7 @@ function printWelcome() {
   addTermLine('╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝    ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝', 'info');
   addTermLine(' ', '');
   addTermLine('  Kajetan Kupaj — Cybersecurity Engineer · aipol.com.pl', 'success');
-  addTermLine('  Warsaw, Poland · k.kupaj@aipol.com.pl', '');
+  addTermLine('  Warsaw, Poland · coopaisolutions@gmail.com', '');
   addTermLine(' ', '');
   addTermLine("  Projects: hackersim.io | skanujzdrowie.pl (w/ Novazym) | aipol.com.pl", 'info');
   addTermLine("  Type 'help' for available commands. Double-click icons to open windows.", 'info');
@@ -962,7 +962,7 @@ function clearMail() {
     if (el) el.value = '';
   });
   document.getElementById('mail-charcount').textContent = '0';
-  setMailStatus('Ready · Powered by EmailJS · → k.kupaj@aipol.com.pl', 'idle');
+  setMailStatus('Ready · Powered by EmailJS · → coopaisolutions@gmail.com', 'idle');
 }
 
 async function sendMail() {
@@ -992,14 +992,14 @@ async function sendMail() {
         reply_to:     replyTo,
         subject:      subject,
         message:      message,
-        to_email:     'k.kupaj@aipol.com.pl',
+        to_email:     'coopaisolutions@gmail.com',
       }
     );
     setMailStatus('✅ Message sent successfully! I\'ll reply as soon as possible.', 'success');
     setTimeout(clearMail, 4000);
   } catch (err) {
     console.error('EmailJS error:', err);
-    setMailStatus('❌ Failed to send. Please email k.kupaj@aipol.com.pl directly.', 'error');
+    setMailStatus('❌ Failed to send. Please email coopaisolutions@gmail.com directly.', 'error');
   } finally {
     document.getElementById('mail-send-btn').disabled = false;
   }

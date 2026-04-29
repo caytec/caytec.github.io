@@ -1,0 +1,26 @@
+🔍 Szukam Ciekawego Projektu
+
+Poszukuję interesującego wyzwania — czy to stanowiska na pełny etat, zlecenia consulting, czy wspólnego projektu w Warszawie lub zdalnie.
+
+6+ lat doświadczenia w operacjach CERT, reagowaniu na incydenty, analizie malware'u i tworzeniu oprogramowania dla dużych organizacji. Pomagam zespołom budować bezpieczne, skalowalne systemy i automatyzować złożone procesy biznesowe.
+
+Aktualnie prowadzę architekturę techniczną w aipol.com.pl, gdzie dostarczam oprogramowanie na zamówienie, usługi bezpieczeństwa i rozwiązania do automatyzacji. Jednocześnie buduję hackersim.io (platformę do nauki cyberbezpieczeństwa) i rozwijam skanujzdrowie.pl (e-commerce testów medycznych).
+
+**Specjalizuję się w:**
+→ Programowanie full-stack (Python, JavaScript, React, Node.js, bazy danych)
+→ Cyberbezpieczeństwo (threat hunting, incident response, pentesting, secure SDLC)
+→ **AI & Automatyzacja** — aktywnie wykorzystuję AI w codziennej pracy i zagnieżdżam je w moich aplikacjach, przyspieszając procesy **10x**
+→ Tworzenie aplikacji od zera (SaaS, e-commerce, Custom apps)
+→ Liderstwo i mentorstwo (skalowanie zespołów, decyzje techniczne)
+→ Komunikacja dwujęzyczna (English/Polish) w środowiskach międzynarodowych
+
+**Portfolio:** caytec.github.io
+**CV:** caytec.github.io/cv.html
+
+Jeśli szukasz kogoś, kto łączy myślenie o bezpieczeństwie z solidnym engineeringiem, kto buduje narzędzia które naprawdę działają, a także twórczo wykorzystuje AI aby przyspieszyć development i wnieść innowacyjne rozwiązania — napisz do mnie.
+
+📧 Email: coopaisolutions@gmail.com | 📱 Telefon: +48 692 302 342
+
+Czekam na interesujące projekty. Wspólnie stworzymy coś niezwykłego. 💻🛡️✨
+
+#Cyberbezpieczeństwo #FullStackDeveloper #Python #JavaScript #AI #Automatyzacja #Rekrutacja #Warszawa #Zdalnie #TechLeadership
