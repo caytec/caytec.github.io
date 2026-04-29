@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kajetan Kupaj — Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Boot Screen -->
+  <div id="boot-screen">
+    <div class="boot-content">
+      <pre id="boot-ascii"></pre>
+      <div id="boot-log" class="boot-log"></div>
+      <div class="boot-progress-bar"><div id="boot-progress" class="boot-progress-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Desktop -->
+  <div id="desktop" class="hidden">
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+      <div class="taskbar-left">
+        <button class="taskbar-btn kali-menu-btn" id="kali-menu-btn">
+          <span class="kali-dragon">⚔</span>
+          <span data-i18n="menu-kali">Kali Linux</span>
+        </button>
+        <div id="app-menu" class="app-menu hidden">
+          <div class="app-menu-header" data-i18n="menu-apps">Applications</div>
+          <div class="app-menu-item" onclick="openWindow('terminal')"><span class="menu-icon">⬛</span><span data-i18n="menu-terminal">Terminal</span></div>
+          <div class="app-menu-item" onclick="openWindow('about')"><span class="menu-icon">👤</span><span data-i18n="menu-about">whoami</span></div>
+          <div class="app-menu-item" onclick="openWindow('skills')"><span class="menu-icon">🛡️</span><span data-i18n="menu-skills">skill-tree</span></div>
+          <div class="app-menu-item" onclick="openWindow('experience')"><span class="menu-icon">📋</span><span data-i18n="menu-career">/var/log/career</span></div>
+          <div class="app-menu-item" onclick="openWindow('projects')"><span class="menu-icon">💻</span><span data-i18n="menu-projects">projects</span></div>
+          <div class="app-menu-item" onclick="openWindow('services')"><span class="menu-icon">⚙️</span><span data-i18n="menu-services">services --list</span></div>
+          <div class="app-menu-item" onclick="openWindow('mail')"><span class="menu-icon">✉️</span><span data-i18n="menu-mail">Thunderbird Mail</span></div>
+          <div class="app-menu-item" onclick="openWindow('contact')"><span class="menu-icon">📡</span><span data-i18n="menu-contact">netcat -contact</span></div>
+          <div class="app-menu-separator"></div>
+          <div class="app-menu-item" onclick="reboot()"><span class="menu-icon">🔄</span><span data-i18n="menu-reboot">Reboot</span></div>
+        </div>
+      </div>
+      <div class="taskbar-center" id="taskbar-windows"></div>
+      <div class="taskbar-right">
+        <button id="lang-toggle-btn" data-i18n="lang-toggle-btn">🇬🇧</button>
+        <span class="taskbar-info" id="clock">00:00</span>
+        <span class="taskbar-info" data-i18n="taskbar-eth0">eth0: connected</span>
+        <span class="taskbar-info status-green">● root@kali</span>
+      </div>
+    </div>
+
+    <!-- Desktop Icons -->
+    <div class="desktop-icons">
+      <div class="desktop-icon" ondblclick="openWindow('about')">
+        <div class="icon-img">👤</div><span data-i18n="desktop-whoami">whoami</span>
+      </div>
+      <div class="desktop-icon" ondblclick="openWindow('skills')">
+        <div class="icon-img">🛡️</div><span data-i18n="desktop-skills">skill-tree</span>
+      </div>
+      <div class="desktop-icon" ondblclick="openWindow('projects')">
+        <div class="icon-img">💻</div><span data-i18n="desktop-projects">projects</span>
+      </div>
+      <div class="desktop-icon" ondblclick="openWindow('services')">
+        <div class="icon-img">⚙️</div><span data-i18n="desktop-services">services</span>
+      </div>
+      <div class="desktop-icon" ondblclick="openWindow('mail')">
+        <div class="icon-img">✉️</div><span data-i18n="desktop-mail">Mail</span>
+      </div>
+      <div class="desktop-icon" ondblclick="openWindow('contact')">
+        <div class="icon-img">📡</div><span data-i18n="desktop-contact">contact</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ TERMINAL ═══════════════════ -->
+    <div class="window hidden" id="win-terminal" style="left:80px;top:60px;width:700px;height:460px;">
+      <div class="window-titlebar" data-win="terminal">
+        <div class="win-buttons">
+          <button class="win-btn win-close"    onclick="closeWindow('terminal')"></button>
+          <button class="win-btn win-minimize" onclick="minimizeWindow('terminal')"></button>
+          <button class="win-btn win-maximize" onclick="maximizeWindow('terminal')"></button>
+        </div>
+        <span class="win-title">root@kali: ~/portfolio — Terminal</span>
+      </div>
+      <div class="window-body terminal-body" id="terminal-output" onclick="focusTerminalInput()">
+        <div id="terminal-lines"></div>
+        <div class="terminal-input-line">
+          <span class="prompt">root@kali<span class="prompt-sep">:</span><span class="prompt-path">~/portfolio</span><span class="prompt-hash">#</span></span>
+          <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <div class="window hidden" id="win-about" style="left:200px;top:80px;width:640px;height:500px;">
+      <div class="window-titlebar" data-win="about">
+        <div class="win-buttons">
+          <button class="win-btn win-close"    onclick="closeWindow('about')"></button>
+          <button class="win-btn win-minimize" onclick="minimizeWindow('about')"></button>
+          <button class="win-btn win-maximize" onclick="maximizeWindow('about')"></button>
+        </div>
+        <span class="win-title" data-i18n="win-about">whoami — User Profile</span>
+      </div>
+      <div class="window-body about-body">
+        <div class="about-left">
+          <div class="avatar-container">
+            <div class="avatar-ring"><div class="avatar-inner"><span class="avatar-text">KK</span></div></div>
+            <div class="status-badge">● ONLINE</div>
+          </div>
+          <div class="user-info">
+            <div class="info-row"><span class="info-label" data-i18n="about-name">NAME</span><span class="info-val">Kajetan Kupaj</span></div>
+            <div class="info-row"><span class="info-label" data-i18n="about-role">ROLE</span><span class="info-val accent">Security Engineer</span></div>
+            <div class="info-row"><span class="info-label" data-i18n="about-loc">LOC</span><span class="info-val">Warsaw, PL</span></div>
+            <div class="info-row"><span class="info-label" data-i18n="about-shell">SHELL</span><span class="info-val">/bin/zsh</span></div>
+            <div class="info-row"><span class="info-label" data-i18n="about-os">OS</span><span class="info-val">Kali Linux 2024</span></div>
+            <div class="info-row"><span class="info-label" data-i18n="about-company">COMPANY</span><span class="info-val accent">aipol.com.pl</span></div>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="section-title"><span class="hash">#</span> <span data-i18n="about-whoami-title">whoami</span></div>
+          <p class="about-text" data-i18n="about-p1">
+            Cybersecurity specialist and fullstack developer with 6+ years of experience spanning CERT operations, malware analysis, application security, and enterprise software development.
+          </p>
+          <p class="about-text" data-i18n="about-p2">
+            I started my journey at ComCERT SA where I handled Tier 1/2 incident response, reverse-engineered malware families like <span class="highlight">DanaBot</span> and <span class="highlight">TrickBot</span>, and automated deepweb threat intelligence gathering.
+          </p>
+          <p class="about-text" data-i18n="about-p3">
+            Today I help build <span class="highlight">aipol.com.pl</span> as lead tech person — delivering custom software, AI automation, and security services — while building <span class="highlight">hackersim.io</span> after hours and working on <span class="highlight">skanujzdrowie.pl</span> with Novazym laboratory.
+          </p>
+          <div class="section-title" style="margin-top:18px;"><span class="hash">#</span> <span data-i18n="about-philosophy">philosophy</span></div>
+          <div class="philosophy-list">
+            <div class="phil-item"><span class="bullet">▸</span><span data-i18n="phil-1">Security through deep understanding, not checkbox compliance</span></div>
+            <div class="phil-item"><span class="bullet">▸</span><span data-i18n="phil-2">Build tools that automate the boring parts of threat hunting</span></div>
+            <div class="phil-item"><span class="bullet">▸</span><span data-i18n="phil-3">Teach what you know — knowledge shared is knowledge multiplied</span></div>
+            <div class="phil-item"><span class="bullet">▸</span><span data-i18n="phil-4">Long-term commitment over short-term gains</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ SKILLS ═══════════════════ -->
+    <div class="window hidden" id="win-skills" style="left:300px;top:50px;width:800px;height:580px;">
+      <div class="window-titlebar" data-win="skills">
+        <div class="win-buttons">
+          <button class="win-btn win-close"    onclick="closeWindow('skills')"></button>
+          <button class="win-btn win-minimize" onclick="minimizeWindow('skills')"></button>
+          <button class="win-btn win-maximize" onclick="maximizeWindow('skills')"></button>
+        </div>
+        <span class="win-title" data-i18n="win-skills">skill-tree — Capability Matrix</span>
+      </div>
+      <div class="window-body skills-body">
+        <div class="skills-tabs">
+          <button class="skill-tab active" onclick="switchSkillTab(this,'sec')" data-i18n="skills-security">IT Security</button>
+          <button class="skill-tab" onclick="switchSkillTab(this,'dev')" data-i18n="skills-dev">Development</button>
+          <button class="skill-tab" onclick="switchSkillTab(this,'ai')" data-i18n="skills-ai">AI & Automation</button>
+        </div>
+        <div class="skill-panel active" id="skill-sec">
+          <div class="skill-grid">
+            <div class="skill-category">
+              <div class="cat-title" data-i18n="skills-offensive">Offensive Security</div>
+              <div class="skill-bar-row"><span>Web Pentesting</span><div class="sbar"><div class="sfill" data-w="88"></div></div><span class="spct">88%</span></div>
+              <div class="skill-bar-row"><span>Malware Analysis</span><div class="sbar"><div class="sfill" data-w="90"></div></div><span class="spct">90%</span></div>
+              <div class="skill-bar-row"><span>Reverse Engineering</span><div class="sbar"><div class="sfill" data-w="82"></div></div><span class="spct">82%</span></div>
+              <div class="skill-bar-row"><span>OSINT</span><div class="sbar"><div class="sfill" data-w="92"></div></div><span class="spct">92%</span></div>
+              <div class="skill-bar-row"><span>Burp Suite</span><div class="sbar"><div class="sfill" data-w="85"></div></div><span class="spct">85%</span></div>
+            </div>
+            <div class="skill-category">
+              <div class="cat-title" data-i18n="skills-defensive">Defensive Security</div>
+              <div class="skill-bar-row"><span>SOC Analysis</span><div class="sbar"><div class="sfill" data-w="90"></div></div><span class="spct">90%</span></div>
+              <div class="skill-bar-row"><span>Threat Hunting</span><div class="sbar"><div class="sfill" data-w="87"></div></div><span class="spct">87%</span></div>
+              <div class="skill-bar-row"><span>Incident Response</span><div class="sbar"><div class="sfill" data-w="93"></div></div><span class="spct">93%</span></div>
+              <div class="skill-bar-row"><span>CTI Automation</span><div class="sbar"><div class="sfill" data-w="88"></div></div><span class="spct">88%</span></div>
+              <div class="skill-bar-row"><span>Forensics</span><div class="sbar"><div class="sfill" data-w="80"></div></div><span class="spct">80%</span></div>
+            </div>
+            <div class="skill-category">
+              <div class="cat-title" data-i18n="skills-tools">Tools & Platforms</div>
+              <div class="skill-tag-grid">
+                <span class="skill-tag red">Splunk / SPL</span><span class="skill-tag red">Kali Linux</span>
+                <span class="skill-tag orange">Symantec DLP</span><span class="skill-tag orange">SEP Manager</span>
+                <span class="skill-tag yellow">Burp Suite Pro</span><span class="skill-tag yellow">Cryptography</span>
+                <span class="skill-tag green">Vuln Scanners</span><span class="skill-tag green">CERT Tooling</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-panel" id="skill-dev">
+          <div class="skill-grid">
+            <div class="skill-category">
+              <div class="cat-title" data-i18n="skills-languages">Languages</div>
+              <div class="skill-bar-row"><span>Python</span><div class="sbar"><div class="sfill blue" data-w="92"></div></div><span class="spct">92%</span></div>
+              <div class="skill-bar-row"><span>JavaScript / TypeScript</span><div class="sbar"><div class="sfill blue" data-w="85"></div></div><span class="spct">85%</span></div>
+              <div class="skill-bar-row"><span>Java</span><div class="sbar"><div class="sfill blue" data-w="75"></div></div><span class="spct">75%</span></div>
+              <div class="skill-bar-row"><span>PHP</span><div class="sbar"><div class="sfill blue" data-w="65"></div></div><span class="spct">65%</span></div>
+              <div class="skill-bar-row"><span>HTML/CSS</span><div class="sbar"><div class="sfill blue" data-w="88"></div></div><span class="spct">88%</span></div>
+            </div>
+            <div class="skill-category">
+              <div class="cat-title" data-i18n="skills-frameworks">Frontend & Backend</div>
+              <div class="skill-bar-row"><span>React + TypeScript</span><div class="sbar"><div class="sfill purple" data-w="86"></div></div><span class="spct">86%</span></div>
+              <div class="skill-bar-row"><span>Python Flask</span><div class="sbar"><div class="sfill purple" data-w="90"></div></div><span class="spct">90%</span></div>
+              <div class="skill-bar-row"><span>Node.js + Express</span><div class="sbar"><div class="sfill purple" data-w="84"></div></div><span class="spct">84%</span></div>
+              <div class="skill-bar-row"><span>SQL / PostgreSQL</span><div class="sbar"><div class="sfill purple" data-w="85"></div></div><span class="spct">85%</span></div>
+              <div class="skill-bar-row"><span>WebSockets</span><div class="sbar"><div class="sfill purple" data-w="82"></div></div><span class="spct">82%</span></div>
+            </div>
+            <div class="skill-category">
+              <div class="cat-title" data-i18n="skills-other">Tech Stack</div>
+              <div class="skill-tag-grid">
+                <span class="skill-tag green">Vite</span><span class="skill-tag green">TailwindCSS</span>
+                <span class="skill-tag green">shadcn/ui</span><span class="skill-tag green">TanStack Query</span>
+                <span class="skill-tag blue">Canvas API</span><span class="skill-tag blue">Docker</span>
+                <span class="skill-tag purple">PostgreSQL</span><span class="skill-tag purple">Drizzle ORM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-panel" id="skill-ai">
+          <div class="skill-grid">
+            <div class="skill-category">
+              <div class="cat-title" data-i18n="skills-ai-models">AI & LLM</div>
+              <div class="skill-bar-row"><span>Claude API</span><div class="sbar"><div class="sfill" data-w="88"></div></div><span class="spct">88%</span></div>
+              <div class="skill-bar-row"><span>Prompt Engineering</span><div class="sbar"><div class="sfill" data-w="85"></div></div><span class="spct">85%</span></div>
+              <div class="skill-bar-row"><span>AI Agents Architecture</span><div class="sbar"><div class="sfill" data-w="82"></div></div><span class="spct">82%</span></div>
+              <div class="skill-bar-row"><span>RAG Systems</span><div class="sbar"><div class="sfill" data-w="78"></div></div><span class="spct">78%</span></div>
+              <div class="skill-bar-row"><span>LLM Integration</span><div class="sbar"><div class="sfill" data-w="85"></div></div><span class="spct">85%</span></div>
+            </div>
+            <div class="skill-category">
+              <div class="cat-title" data-i18n="skills-automation">Automation & Tools</div>
+              <div class="skill-tag-grid">
+                <span class="skill-tag orange">Claude Code</span><span class="skill-tag orange">AI Studio</span>
+                <span class="skill-tag red">Automation Scripts</span><span class="skill-tag red">Selenium</span>
+                <span class="skill-tag green">Machine Learning</span><span class="skill-tag green">Data Processing</span>
+                <span class="skill-tag blue">Workflow Automation</span><span class="skill-tag blue">Bot Development</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
+    <div class="window hidden" id="win-experience" style="left:120px;top:70px;width:680px;height:580px;">
+      <div class="window-titlebar" data-win="experience">
+        <div class="win-buttons">
+          <button class="win-btn win-close"    onclick="closeWindow('experience')"></button>
+          <button class="win-btn win-minimize" onclick="minimizeWindow('experience')"></button>
+          <button class="win-btn win-maximize" onclick="maximizeWindow('experience')"></button>
+        </div>
+        <span class="win-title" data-i18n="win-exp">cat /var/log/career.log — Work Experience</span>
+      </div>
+      <div class="window-body experience-body">
+        <div class="exp-timeline">
+
+          <div class="exp-entry current">
+            <div class="exp-dot pulse"></div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp-role-founder">Founder & Technical Lead</span>
+                <span class="exp-badge live">2023 — NOW</span>
+              </div>
+              <div class="exp-company" data-i18n="exp-co-aipol">aipol.com.pl · Warsaw (Co-building)</div>
+              <div class="exp-tags">
+                <span class="etag">Python</span><span class="etag">AI Agents</span><span class="etag">Flask</span><span class="etag">React</span><span class="etag">Security</span>
+              </div>
+              <ul class="exp-list">
+                <li data-i18n="exp-aipol-1">Co-building IT services company as lead technical person — custom software, AI automation, security audits</li>
+                <li data-i18n="exp-aipol-2">Co-developing <strong>skanujzdrowie.pl</strong> — medical testing platform with Novazym laboratory</li>
+                <li data-i18n="exp-aipol-3">Building <strong>hackersim.io</strong> — hacking simulation learning platform (after-hours)</li>
+                <li data-i18n="exp-aipol-4">Designing & deploying custom AI agents and LLM-based automation for clients</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp-role-fullstack">Fullstack Developer & Splunk Specialist</span>
+                <span class="exp-badge">2022–2023</span>
+              </div>
+              <div class="exp-company" data-i18n="exp-co-citi">Citibank · Warsaw (Global Security Operations)</div>
+              <div class="exp-tags">
+                <span class="etag">Python</span><span class="etag">Flask</span><span class="etag">Splunk</span><span class="etag">SQL</span><span class="etag">Linux</span>
+              </div>
+              <ul class="exp-list">
+                <li data-i18n="exp-citi-1">Built Splunk dashboards from global storage infrastructure data</li>
+                <li data-i18n="exp-citi-2">Developed search engine for storage servers (Python/Flask/SQL)</li>
+                <li data-i18n="exp-citi-3">Rewrote legacy Java app into modern Python fullstack application</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp-role-admin">IT Administrator</span>
+                <span class="exp-badge">2022</span>
+              </div>
+              <div class="exp-company" data-i18n="exp-co-heritage">Heritage Real Estate · Warsaw</div>
+              <div class="exp-tags"><span class="etag">SCCM</span><span class="etag">Python</span><span class="etag">300+ users</span></div>
+              <ul class="exp-list">
+                <li data-i18n="exp-her-1">Managed IT infrastructure for 300+ end users</li>
+                <li data-i18n="exp-her-2">Built custom ticketing and helpdesk system from scratch</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp-role-appseC">Application Security Consultant</span>
+                <span class="exp-badge">2021</span>
+              </div>
+              <div class="exp-company" data-i18n="exp-co-gsk">GSK · Remote (Global)</div>
+              <div class="exp-tags"><span class="etag">AppSec</span><span class="etag">SDElements</span><span class="etag">Java</span></div>
+              <ul class="exp-list">
+                <li data-i18n="exp-gsk-1">Sole administrator of SDElements across corporation</li>
+                <li data-i18n="exp-gsk-2">Provided security guidelines and training for dev teams</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp-role-analyst">Security Analyst</span>
+                <span class="exp-badge">2020</span>
+              </div>
+              <div class="exp-company" data-i18n="exp-co-aviva">Aviva · Warsaw (GSOC)</div>
+              <div class="exp-tags"><span class="etag">GSOC</span><span class="etag">Python</span><span class="etag">Phishing</span></div>
+              <ul class="exp-list">
+                <li data-i18n="exp-avi-1">Daily threat analysis for Global Security Operations Center</li>
+                <li data-i18n="exp-avi-2">Built automated phishing analysis tool</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp-role-eng">IT Security Engineer (Mid)</span>
+                <span class="exp-badge">2019–2020</span>
+              </div>
+              <div class="exp-company" data-i18n="exp-co-comtegra">Comtegra · Warsaw</div>
+              <div class="exp-tags"><span class="etag">Symantec DLP</span><span class="etag">Java</span><span class="etag">API</span></div>
+              <ul class="exp-list">
+                <li data-i18n="exp-com-1">Implemented Symantec DLP and SEP products</li>
+                <li data-i18n="exp-com-2">First to detect failed campaign — provided full C2C analysis</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp-role-junior">Junior IT Security Specialist</span>
+                <span class="exp-badge">2018–2019</span>
+              </div>
+              <div class="exp-company" data-i18n="exp-co-comcert">ComCERT SA · Warsaw</div>
+              <div class="exp-tags"><span class="etag">CERT</span><span class="etag">Malware RE</span><span class="etag">CTI</span></div>
+              <ul class="exp-list">
+                <li data-i18n="exp-cert-1">Handled Tier 1/2 incident response</li>
+                <li data-i18n="exp-cert-2">Reverse-engineered malware (DanaBot, TrickBot)</li>
+                <li data-i18n="exp-cert-3">Automated deepweb threat intelligence scanning</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+    <div class="window hidden" id="win-projects" style="left:160px;top:60px;width:800px;height:620px;">
+      <div class="window-titlebar" data-win="projects">
+        <div class="win-buttons">
+          <button class="win-btn win-close"    onclick="closeWindow('projects')"></button>
+          <button class="win-btn win-minimize" onclick="minimizeWindow('projects')"></button>
+          <button class="win-btn win-maximize" onclick="maximizeWindow('projects')"></button>
+        </div>
+        <span class="win-title" data-i18n="win-projects">ls ~/projects — Active Projects</span>
+      </div>
+      <div class="window-body projects-body">
+
+        <!-- hackersim.io -->
+        <div class="project-block">
+          <div class="hackersim-hero">
+            <div class="hs-logo-area">
+              <div class="hs-logo"><span class="hs-brackets">[</span><span class="hs-text">HACKER</span><span class="hs-sim">SIM</span><span class="hs-brackets">]</span></div>
+              <div class="hs-domain">.io</div>
+            </div>
+            <div class="hs-tagline" data-i18n="hs-tagline">Learn cybersecurity by doing it — not reading about it.</div>
+            <div class="hs-badges">
+              <span class="hsbadge" data-i18n="badge-passion">Passion Project</span>
+              <span class="hsbadge active" data-i18n="badge-active">Active Development</span>
+              <span class="hsbadge" data-i18n="badge-hours">After-Hours</span>
+            </div>
+          </div>
+          <div class="section-title" style="margin-top:14px;"><span class="hash">#</span> hackersim.io</div>
+          <p class="about-text" data-i18n="hs-desc1">
+            Realistic hacking simulation platform built after hours — learn cybersecurity by doing, not watching videos. Simulated Linux environment with real terminal mechanics, network topology, and CVE-based vulnerabilities — all safely sandboxed. Every scenario drawn from real incidents.
+          </p>
+          <div class="tech-stack" style="margin-top:10px;">
+            <div style="font-size:10px;color:var(--text-dim);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Frontend:</div>
+            <span class="tech-pill">React</span><span class="tech-pill">TypeScript</span><span class="tech-pill">Vite</span>
+            <span class="tech-pill">TailwindCSS</span><span class="tech-pill">shadcn/ui</span><span class="tech-pill">TanStack Query</span>
+            <span class="tech-pill">Wouter</span><span class="tech-pill">Lucide React</span>
+            <div style="font-size:10px;color:var(--text-dim);margin:10px 0 6px 0;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Backend:</div>
+            <span class="tech-pill">Node.js</span><span class="tech-pill">Express</span><span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">WebSocket (ws)</span><span class="tech-pill">PostgreSQL</span><span class="tech-pill">Drizzle ORM</span>
+            <span class="tech-pill">bcrypt</span><span class="tech-pill">Railway</span>
+          </div>
+        </div>
+
+        <div class="project-divider"></div>
+
+        <!-- aipol.com.pl -->
+        <div class="project-block">
+          <div class="aipol-hero">
+            <div class="aipol-logo">
+              <span class="aipol-ai">AI</span><span class="aipol-pol">POL</span><span class="aipol-tld">.com.pl</span>
+            </div>
+            <div class="hs-tagline" data-i18n="aipol-tagline">Polish IT company — AI, Security, Custom Software</div>
+            <div class="hs-badges">
+              <span class="hsbadge active" data-i18n="aipol-badge">Co-building as Lead Tech</span>
+              <span class="hsbadge">Warsaw, PL</span>
+            </div>
+          </div>
+          <div class="section-title" style="margin-top:14px;"><span class="hash">#</span> aipol.com.pl</div>
+          <p class="about-text" data-i18n="aipol-desc">
+            Co-building as lead technical person — merging cybersecurity expertise with software development and cutting-edge AI. Deliver comprehensive solutions: security audits, custom applications, SaaS platforms, and autonomous AI agent deployments.
+          </p>
+        </div>
+
+        <div class="project-divider"></div>
+
+        <!-- skanujzdrowie.pl -->
+        <div class="project-block">
+          <div class="skanzdrowie-hero">
+            <div class="sz-logo">
+              <span class="sz-icon">🧬</span>
+              <span class="sz-name">skanujzdrowie</span><span class="sz-tld">.pl</span>
+            </div>
+            <div class="hs-tagline" data-i18n="sz-tagline">Online cancer tests — partnership with Novazym laboratory</div>
+            <div class="hs-badges">
+              <span class="hsbadge active" data-i18n="sz-badge-building">Building</span>
+              <span class="hsbadge">Novazym Lab</span>
+              <span class="hsbadge">MedTech</span>
+            </div>
+          </div>
+          <div class="section-title" style="margin-top:14px;"><span class="hash">#</span> skanujzdrowie.pl</div>
+          <p class="about-text" data-i18n="sz-desc1">
+            E-commerce platform for cancer diagnostic testing in partnership with <span class="highlight">Novazym</span> laboratory. Users order tests online, collect samples at home or collection points, and receive results securely through encrypted dashboard.
+          </p>
+          <div class="tech-stack" style="margin-top:10px;">
+            <span class="tech-pill">Python</span><span class="tech-pill">Flask</span><span class="tech-pill">SQL</span>
+            <span class="tech-pill">Stripe / Przelewy24</span><span class="tech-pill">Shoper</span><span class="tech-pill">RODO</span><span class="tech-pill">HL7/FHIR</span>
+          </div>
+        </div>
+
+        <div class="project-divider"></div>
+
+        <!-- Hearthmark -->
+        <div class="project-block">
+          <div class="hearthmark-hero">
+            <div class="hm-logo-area">
+              <span class="hm-icon">⚔️</span>
+              <div class="hm-title-block">
+                <span class="hm-name">Hearthmark</span>
+                <span class="hm-sub" data-i18n="hm-sub">Browser MMO · Harsh Medieval World</span>
+              </div>
+            </div>
+            <div class="hs-badges" style="margin-top:12px;">
+              <span class="hsbadge active" data-i18n="hm-badge-prod">In Production</span>
+              <span class="hsbadge">Browser MMO</span>
+              <span class="hsbadge">Card Combat</span>
+              <span class="hsbadge" data-i18n="badge-passion">Passion Project</span>
+            </div>
+          </div>
+
+          <div class="section-title" style="margin-top:14px;"><span class="hash">#</span> Hearthmark — <span data-i18n="hm-title">Harsh Medieval World</span></div>
+          <p class="about-text" data-i18n="hm-desc">
+            Browser MMO where players start from zero — chop trees, farm land, learn crafts, build settlements on a shared, living world. Card-based combat with initiative points, not simple clicking. <a href="https://hayven.fly.dev/" target="_blank" style="color:var(--green);font-weight:600;">Play Hearthmark →</a>
+          </p>
+
+          <div class="hm-pillars">
+            <div class="hm-pillar">
+              <div class="hm-pillar-icon">🃏</div>
+              <div class="hm-pillar-title" data-i18n="hm-card">Card Combat</div>
+              <div class="hm-pillar-desc" data-i18n="hm-card-desc">Tactics matter. Every encounter with wolf, bear, or player requires strategy, hand management, and reading your opponent.</div>
+            </div>
+            <div class="hm-pillar">
+              <div class="hm-pillar-icon">⚗️</div>
+              <div class="hm-pillar-title" data-i18n="hm-quality">Material Quality</div>
+              <div class="hm-pillar-desc" data-i18n="hm-quality-desc">Three axes: <span class="hl-s">Substrate</span>, <span class="hl-e">Essence</span>, <span class="hl-v">Vitality</span> cascade through crafting — wood quality affects tool quality, which affects final product value.</div>
+            </div>
+            <div class="hm-pillar">
+              <div class="hm-pillar-icon">🏘️</div>
+              <div class="hm-pillar-title" data-i18n="hm-settlements">Settlements & Alliances</div>
+              <div class="hm-pillar-desc" data-i18n="hm-settle-desc">Villages with rank hierarchies. Alliances, shared projects, competition for resources shape emergent player-driven politics.</div>
+            </div>
+            <div class="hm-pillar">
+              <div class="hm-pillar-icon">🕯️</div>
+              <div class="hm-pillar-title" data-i18n="hm-faith">Altars & Oaths</div>
+              <div class="hm-pillar-desc" data-i18n="hm-faith-desc">Sacrifice at ancestor altars and swear oaths for bonuses at cost of constraints. Every choice has real price.</div>
+            </div>
+          </div>
+
+          <div class="tech-stack" style="margin-top:14px;">
+            <div style="font-size:10px;color:var(--text-dim);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Frontend:</div>
+            <span class="tech-pill">Vanilla JavaScript</span><span class="tech-pill">HTML5</span><span class="tech-pill">Canvas</span>
+            <span class="tech-pill">WebAudio API</span>
+            <div style="font-size:10px;color:var(--text-dim);margin:10px 0 6px 0;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Backend:</div>
+            <span class="tech-pill">Node.js</span><span class="tech-pill">WebSocket (ws)</span><span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">Docker</span><span class="tech-pill">Fly.io</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══════════════════ SERVICES ═══════════════════ -->
+    <div class="window hidden" id="win-services" style="left:180px;top:55px;width:740px;height:600px;">
+      <div class="window-titlebar" data-win="services">
+        <div class="win-buttons">
+          <button class="win-btn win-close"    onclick="closeWindow('services')"></button>
+          <button class="win-btn win-minimize" onclick="minimizeWindow('services')"></button>
+          <button class="win-btn win-maximize" onclick="maximizeWindow('services')"></button>
+        </div>
+        <span class="win-title" data-i18n="win-services">systemctl list-units --services</span>
+      </div>
+      <div class="window-body services-body">
+        <div class="services-header">
+          <div class="sh-title">
+            <span class="sh-prompt">root@aipol:~#</span>
+            <span class="sh-cmd"> systemctl list-units --type=service --state=active</span>
+          </div>
+          <div class="sh-subtitle" data-i18n="svc-subtitle">Active services · aipol.com.pl · Kajetan Kupaj</div>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card highlight-card">
+            <div class="svc-icon">🔍</div>
+            <div class="svc-name" data-i18n="svc-audit">Security Audit</div>
+            <div class="svc-status"><span class="svc-dot active"></span>active</div>
+            <div class="svc-desc" data-i18n="svc-audit-desc">Comprehensive security assessment of web apps, infrastructure, and code. Penetration testing, vulnerability analysis, detailed report with recommendations.</div>
+          </div>
+
+          <div class="service-card">
+            <div class="svc-icon">🌐</div>
+            <div class="svc-name" data-i18n="svc-www">Web Portals</div>
+            <div class="svc-status"><span class="svc-dot active"></span>active</div>
+            <div class="svc-desc" data-i18n="svc-www-desc">Modern, fast, responsive websites. From landing pages to complex portals — optimized for SEO and security.</div>
+          </div>
+
+          <div class="service-card">
+            <div class="svc-icon">🛒</div>
+            <div class="svc-name" data-i18n="svc-shop">E-Commerce Store</div>
+            <div class="svc-status"><span class="svc-dot active"></span>active</div>
+            <div class="svc-desc" data-i18n="svc-shop-desc">Custom-built online stores — payment integrations (Stripe, Przelewy24), admin panel, secure checkout.</div>
+          </div>
+
+          <div class="service-card">
+            <div class="svc-icon">☁️</div>
+            <div class="svc-name" data-i18n="svc-saas">SaaS Platforms</div>
+            <div class="svc-status"><span class="svc-dot active"></span>active</div>
+            <div class="svc-desc" data-i18n="svc-saas-desc">Build products from scratch — multi-tenant architecture, subscriptions, dashboards, APIs, hosting.</div>
+          </div>
+
+          <div class="service-card">
+            <div class="svc-icon">📱</div>
+            <div class="svc-name" data-i18n="svc-apps">Custom Apps</div>
+            <div class="svc-status"><span class="svc-dot active"></span>active</div>
+            <div class="svc-desc" data-i18n="svc-apps-desc">Full-stack applications built to spec — web, desktop, or hybrid. Python, JavaScript, Java — any tech stack.</div>
+          </div>
+
+          <div class="service-card highlight-card">
+            <div class="svc-icon">🤖</div>
+            <div class="svc-name" data-i18n="svc-ai-auto">AI Automation</div>
+            <div class="svc-status"><span class="svc-dot active"></span>active</div>
+            <div class="svc-desc" data-i18n="svc-ai-auto-desc">Automate business processes using AI agents — LLM integrations, data pipelines, bots, report generation, workflow without human touch.</div>
+          </div>
+
+          <div class="service-card highlight-card">
+            <div class="svc-icon">🧠</div>
+            <div class="svc-name" data-i18n="svc-ai-agent">Custom AI Agent</div>
+            <div class="svc-status"><span class="svc-dot active"></span>active</div>
+            <div class="svc-desc" data-i18n="svc-ai-agent-desc">Design and deploy your own AI agent — model selection, configuration, training, hosting, monitoring. Chat with customers, analyze data, manage tasks.</div>
+          </div>
+
+          <div class="service-card">
+            <div class="svc-icon">🔧</div>
+            <div class="svc-name" data-i18n="svc-consult">Consulting</div>
+            <div class="svc-status"><span class="svc-dot active"></span>active</div>
+            <div class="svc-desc" data-i18n="svc-consult-desc">Technical advice — architecture review, code audit, cloud migration, CI/CD setup, optimization, troubleshooting.</div>
+          </div>
+
+        </div>
+
+        <div class="services-cta">
+          <div class="cta-inner">
+            <div class="cta-icon">📨</div>
+            <div class="cta-text">
+              <div class="cta-title" data-i18n="cta-title">Every project is different</div>
+              <div class="cta-sub" data-i18n="cta-sub">Write to me for a custom quote — we'll find the best solution together.</div>
+            </div>
+            <button class="cta-btn" onclick="openWindow('mail')" data-i18n="cta-btn">✉️ Write</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══════════════════ MAIL ═══════════════════ -->
+    <div class="window hidden" id="win-mail" style="left:140px;top:65px;width:720px;height:560px;">
+      <div class="window-titlebar" data-win="mail">
+        <div class="win-buttons">
+          <button class="win-btn win-close"    onclick="closeWindow('mail')"></button>
+          <button class="win-btn win-minimize" onclick="minimizeWindow('mail')"></button>
+          <button class="win-btn win-maximize" onclick="maximizeWindow('mail')"></button>
+        </div>
+        <span class="win-title" data-i18n="mail-title">✉️ Thunderbird — New Message</span>
+      </div>
+      <div class="window-body mail-body">
+        <div class="mail-toolbar">
+          <button class="mail-tb-btn" id="mail-send-btn" onclick="sendMail()">
+            <span>▶</span> <span data-i18n="mail-send">Send</span>
+          </button>
+          <button class="mail-tb-btn" onclick="clearMail()" data-i18n="mail-clear">🗑 Clear</button>
+          <div class="mail-tb-sep"></div>
+          <span class="mail-tb-label" data-i18n="mail-compose">Compose New Message</span>
+        </div>
+        <div class="mail-fields">
+          <div class="mail-field-row">
+            <label class="mail-label" data-i18n="mail-from">From:</label>
+            <div class="mail-val-static">k.kupaj@aipol.com.pl</div>
+          </div>
+          <div class="mail-field-row">
+            <label class="mail-label" data-i18n="mail-to">To:</label>
+            <div class="mail-val-static accent">k.kupaj@aipol.com.pl</div>
+          </div>
+          <div class="mail-field-row">
+            <label class="mail-label" data-i18n="mail-reply">Reply-To:</label>
+            <input type="email" id="mail-reply" class="mail-input" placeholder="your@email.com" />
+          </div>
+          <div class="mail-field-row">
+            <label class="mail-label" data-i18n="mail-subject">Subject:</label>
+            <input type="text" id="mail-subject" class="mail-input" placeholder="e.g. Quote request — security audit" />
+          </div>
+          <div class="mail-field-row">
+            <label class="mail-label" data-i18n="mail-name">Name:</label>
+            <input type="text" id="mail-name" class="mail-input" placeholder="Your name / company" />
+          </div>
+        </div>
+        <div class="mail-body-area">
+          <textarea id="mail-message" class="mail-textarea" placeholder="Write your message...&#10;&#10;Describe your project or question. I'll respond ASAP."></textarea>
+        </div>
+        <div class="mail-statusbar">
+          <span id="mail-status" class="mail-status-idle" data-i18n="mail-status">Ready · Powered by EmailJS · → k.kupaj@aipol.com.pl</span>
+          <span class="mail-char-count"><span id="mail-charcount">0</span> chars</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <div class="window hidden" id="win-contact" style="left:250px;top:100px;width:560px;height:440px;">
+      <div class="window-titlebar" data-win="contact">
+        <div class="win-buttons">
+          <button class="win-btn win-close"    onclick="closeWindow('contact')"></button>
+          <button class="win-btn win-minimize" onclick="minimizeWindow('contact')"></button>
+          <button class="win-btn win-maximize" onclick="maximizeWindow('contact')"></button>
+        </div>
+        <span class="win-title" data-i18n="win-contact">netcat -contact — Get In Touch</span>
+      </div>
+      <div class="window-body contact-body">
+        <div class="contact-terminal">
+          <div class="ct-line"><span class="ct-prompt">$</span> <span class="ct-cmd">nmap -sV kajetan.kupaj</span></div>
+          <div class="ct-output accent">PORT       STATE  SERVICE</div>
+          <div class="ct-output">──────────────────────────────────────────</div>
+          <div class="ct-output"><span class="port-open">OPEN</span>  &lt;email&gt;     <a href="mailto:k.kupaj@aipol.com.pl" class="contact-link">k.kupaj@aipol.com.pl</a></div>
+          <div class="ct-output"><span class="port-open">OPEN</span>  &lt;phone&gt;     <a href="tel:+48692302342" class="contact-link">+48 692 302 342</a></div>
+          <div class="ct-output"><span class="port-open">OPEN</span>  &lt;linkedin&gt;  <a href="https://linkedin.com/in/kajetankupaj" target="_blank" class="contact-link">linkedin.com/in/kajetankupaj</a></div>
+          <div class="ct-output"><span class="port-open">OPEN</span>  &lt;company&gt;   <span class="contact-link">aipol.com.pl</span></div>
+          <div class="ct-output"><span class="port-open">OPEN</span>  &lt;games&gt;     <a href="https://hayven.fly.dev/" target="_blank" class="contact-link">Hearthmark (hayven.fly.dev)</a></div>
+          <div class="ct-output"><span class="port-open">OPEN</span>  &lt;location&gt;  Warsaw, Poland</div>
+          <div class="ct-output">──────────────────────────────────────────</div>
+          <div class="ct-output accent" data-i18n="ct-nmap-done">Nmap done: 1 IP address (1 host up)</div>
+          <br/>
+          <div class="ct-line"><span class="ct-prompt">$</span> <span class="ct-cmd">cat NOTE.txt</span></div>
+          <div class="ct-output notice-box" data-i18n="ct-note">📱 If I don't pick up, leave an SMS mentioning recruitment or project. Open to long-term work and collaborations.</div>
+          <br/>
+          <div class="ct-line"><span class="ct-prompt">$</span> <span class="ct-cmd blink-cursor">_</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /desktop -->
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
