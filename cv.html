@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kajetan Kupaj — Cybersecurity Engineer & Full-Stack Developer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .cv-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    header {
+      border-bottom: 2px solid #0066cc;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+      color: #000;
+    }
+    .header-subtitle {
+      font-size: 14px;
+      color: #666;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .header-subtitle span {
+      display: flex;
+      gap: 6px;
+    }
+    section {
+      margin-bottom: 28px;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0066cc;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+      margin-bottom: 15px;
+    }
+    .job-entry, .project-entry {
+      margin-bottom: 20px;
+    }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .job-title {
+      font-weight: 600;
+      font-size: 15px;
+      color: #000;
+    }
+    .job-company {
+      color: #0066cc;
+      font-weight: 500;
+    }
+    .job-period {
+      font-size: 13px;
+      color: #666;
+    }
+    .job-location {
+      font-size: 13px;
+      color: #666;
+    }
+    .job-description {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #333;
+    }
+    .job-bullets {
+      margin-top: 8px;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+    .job-bullets li {
+      margin-bottom: 5px;
+      color: #333;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      font-size: 14px;
+    }
+    .skill-category h3 {
+      font-weight: 600;
+      font-size: 14px;
+      color: #0066cc;
+      margin-bottom: 6px;
+    }
+    .skill-category p {
+      color: #333;
+      line-height: 1.5;
+    }
+    .summary {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 12px;
+    }
+    .tech-keywords {
+      font-size: 13px;
+      color: #666;
+      margin-top: 8px;
+    }
+    strong {
+      color: #000;
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .cv-container { box-shadow: none; padding: 40px; max-width: 100%; }
+      header { border-bottom: 2px solid #0066cc; }
+    }
+    @media (max-width: 768px) {
+      .cv-container { padding: 20px; }
+      h1 { font-size: 24px; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cv-container">
+
+  <!-- HEADER -->
+  <header>
+    <h1>Kajetan Kupaj</h1>
+    <div class="header-subtitle">
+      <span>Cybersecurity Engineer & Full-Stack Developer</span>
+      <span>|</span>
+      <span>Warsaw, Poland</span>
+      <span>|</span>
+      <span>k.kupaj@aipol.com.pl</span>
+    </div>
+  </header>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <section>
+    <h2>Professional Summary</h2>
+    <p class="summary">
+      <strong>Cybersecurity specialist and full-stack developer with 6+ years of experience</strong> in CERT operations, incident response, malware analysis, application security, and enterprise software development.
+      <strong>Lead technical architect at aipol.com.pl</strong> designing custom software, AI automation solutions, and security services. Proven expertise in building scalable systems,
+      threat hunting automation, and mentoring development teams on security best practices.
+      <strong>Bilingual professional</strong> (English / Polish) with strong communication skills in international settings.
+    </p>
+    <p class="tech-keywords">
+      <strong>Keywords:</strong> Incident Response, Malware Analysis, Python, JavaScript, Full-Stack Development,
+      Splunk, Application Security, AI Agents, LLM Integration, Penetration Testing, SIEM, Cloud Architecture,
+      Threat Intelligence, Leadership, SaaS Development
+    </p>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section>
+    <h2>Work Experience</h2>
+
+    <div class="job-entry">
+      <div class="job-header">
+        <span class="job-title">Founder & Technical Lead</span>
+        <span class="job-company">aipol.com.pl</span>
+        <span class="job-period">2022 — Present</span>
+      </div>
+      <div class="job-location">Warsaw, Poland</div>
+      <p class="job-description">Co-building Polish IT services company as lead technical person. Architecting and delivering custom software solutions, AI automation workflows, and comprehensive security services for enterprise clients.</p>
+      <ul class="job-bullets">
+        <li><strong>Technical Leadership:</strong> Design and oversee architecture for multi-tenant SaaS platforms, e-commerce integrations, and enterprise automation solutions</li>
+        <li><strong>AI & Automation:</strong> Architect and deploy custom LLM-based agents and AI automation workflows for business process optimization</li>
+        <li><strong>Security Services:</strong> Conduct infrastructure audits, penetration tests, and security assessments; provide remediation guidance to clients</li>
+        <li><strong>Product Development:</strong> Co-developing skanujzdrowie.pl medical testing platform (e-commerce + patient portal) with Novazym laboratory</li>
+        <li><strong>Portfolio Projects:</strong> Building hackersim.io — cybersecurity education platform with browser-based labs and realistic exploit simulations</li>
+        <li><strong>Full-Stack Development:</strong> Python, JavaScript (Node.js, React), API design, database architecture (PostgreSQL, MongoDB)</li>
+      </ul>
+    </div>
+
+    <div class="job-entry">
+      <div class="job-header">
+        <span class="job-title">Fullstack Developer & Splunk Specialist</span>
+        <span class="job-company">Citibank</span>
+        <span class="job-period">2020 — 2022</span>
+      </div>
+      <div class="job-location">Warsaw, Poland — Global Security Operations</div>
+      <p class="job-description">Developed dashboards and search optimization tools for global storage infrastructure monitoring. Modernized legacy systems using Python full-stack development.</p>
+      <ul class="job-bullets">
+        <li>Designed and deployed complex Splunk dashboards analyzing terabytes of infrastructure data across global datacenters</li>
+        <li>Built custom Python/Flask/SQL search engine for storage server fleet management, reducing query times by 60%</li>
+        <li>Rewrote legacy Java application into modern Python full-stack application, improving maintainability and performance</li>
+        <li>Collaborated with security operations team on automated alerting and threat correlation</li>
+      </ul>
+    </div>
+
+    <div class="job-entry">
+      <div class="job-header">
+        <span class="job-title">Application Security Consultant</span>
+        <span class="job-company">GlaxoSmithKline (GSK)</span>
+        <span class="job-period">2019 — 2020</span>
+      </div>
+      <div class="job-location">Remote (Global)</div>
+      <p class="job-description">Sole administrator of security policy management platform. Provided security training and guidelines to development teams.</p>
+      <ul class="job-bullets">
+        <li>Sole SDElements platform administrator for entire corporation; managed security policy workflows and compliance tracking</li>
+        <li>Developed and delivered security guidelines, code review standards, and training materials for development teams</li>
+        <li>Partnered with development leadership on secure SDLC implementation</li>
+      </ul>
+    </div>
+
+    <div class="job-entry">
+      <div class="job-header">
+        <span class="job-title">Security Analyst</span>
+        <span class="job-company">Aviva</span>
+        <span class="job-period">2019</span>
+      </div>
+      <div class="job-location">Warsaw, Poland — Global Security Operations Center</div>
+      <p class="job-description">Daily threat analysis and incident triage for global insurance operations. Built automated phishing detection and analysis tooling.</p>
+      <ul class="job-bullets">
+        <li>Performed daily threat analysis, alert triage, and incident assessment for GSOC</li>
+        <li>Automated phishing email analysis tool using Python, reducing manual review time by 70%</li>
+      </ul>
+    </div>
+
+    <div class="job-entry">
+      <div class="job-header">
+        <span class="job-title">IT Security Engineer (Mid)</span>
+        <span class="job-company">Comtegra</span>
+        <span class="job-period">2018 — 2019</span>
+      </div>
+      <div class="job-location">Warsaw, Poland</div>
+      <p class="job-description">Implemented endpoint protection and data loss prevention solutions. Detected and analyzed advanced threats.</p>
+      <ul class="job-bullets">
+        <li>Deployed Symantec DLP and SEP across enterprise infrastructure</li>
+        <li>First to detect and fully analyze a failed targeted campaign; provided comprehensive C2C analysis</li>
+      </ul>
+    </div>
+
+    <div class="job-entry">
+      <div class="job-header">
+        <span class="job-title">IT Administrator</span>
+        <span class="job-company">Heritage Real Estate</span>
+        <span class="job-period">2017 — 2018</span>
+      </div>
+      <div class="job-location">Warsaw, Poland</div>
+      <p class="job-description">Managed IT infrastructure and built custom ticketing system for 300+ user organization.</p>
+      <ul class="job-bullets">
+        <li>Managed IT infrastructure for 300+ end users; handled hardware, networking, and software distribution</li>
+        <li>Designed and implemented custom ticketing and helpdesk system from scratch</li>
+      </ul>
+    </div>
+
+    <div class="job-entry">
+      <div class="job-header">
+        <span class="job-title">Junior IT Security Specialist</span>
+        <span class="job-company">ComCERT SA</span>
+        <span class="job-period">2016 — 2017</span>
+      </div>
+      <div class="job-location">Warsaw, Poland</div>
+      <p class="job-description">Started security career handling incident response and malware analysis. Automated threat intelligence gathering.</p>
+      <ul class="job-bullets">
+        <li>Handled Tier 1 and Tier 2 incident response; investigated security alerts and contained threats</li>
+        <li>Reverse-engineered malware families including DanaBot and TrickBot; documented findings for threat intelligence</li>
+        <li>Automated deepweb threat intelligence scanning, significantly reducing manual monitoring workload</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Languages & Frameworks</h3>
+        <p><strong>Programming:</strong> Python, JavaScript, SQL, Java, Bash</p>
+        <p><strong>Web:</strong> React, Node.js, Flask, FastAPI, HTML5, CSS3</p>
+        <p><strong>Databases:</strong> PostgreSQL, MongoDB, Redis, SQLite</p>
+      </div>
+      <div class="skill-category">
+        <h3>Cybersecurity & Tools</h3>
+        <p><strong>SIEM & Monitoring:</strong> Splunk, ELK Stack, Prometheus</p>
+        <p><strong>Security Tools:</strong> Metasploit, Burp Suite, OWASP ZAP, Wireshark</p>
+        <p><strong>Incident Response:</strong> Threat hunting, malware analysis, log analysis, YARA rules</p>
+      </div>
+      <div class="skill-category">
+        <h3>AI & Automation</h3>
+        <p><strong>LLM Integration:</strong> OpenAI APIs, Claude API, prompt engineering</p>
+        <p><strong>Automation:</strong> Workflow orchestration, data pipelines, bot development</p>
+        <p><strong>Analytics:</strong> Data analysis, visualization, predictive modeling</p>
+      </div>
+      <div class="skill-category">
+        <h3>Cloud & Infrastructure</h3>
+        <p><strong>Cloud Platforms:</strong> AWS, Google Cloud, Fly.io, Vercel</p>
+        <p><strong>DevOps:</strong> Docker, GitHub Actions, CI/CD pipelines, monitoring</p>
+        <p><strong>Architecture:</strong> Microservices, SaaS design, multi-tenant systems, REST APIs</p>
+      </div>
+      <div class="skill-category">
+        <h3>Application Security</h3>
+        <p><strong>Expertise:</strong> Code review, vulnerability assessment, penetration testing, secure SDLC</p>
+        <p><strong>Standards:</strong> OWASP Top 10, CWE, CVSS, compliance frameworks</p>
+      </div>
+      <div class="skill-category">
+        <h3>Soft Skills</h3>
+        <p><strong>Leadership:</strong> Technical decision-making, mentoring, cross-team collaboration</p>
+        <p><strong>Languages:</strong> English (fluent), Polish (native)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS & ACHIEVEMENTS -->
+  <section>
+    <h2>Projects & Notable Achievements</h2>
+
+    <div class="project-entry">
+      <div class="job-header">
+        <span class="job-title">Harsh Medieval World (Browser MMO)</span>
+        <span class="job-period">In Production — 1000+ concurrent players</span>
+      </div>
+      <p class="job-description">
+        Solo-built persistent browser-based MMO set in harsh medieval world. Built with vanilla JavaScript, Canvas API for rendering, and WebSocket backend.
+        Hosts 1000+ simultaneous players on Fly.io infrastructure. Features include player-driven economy, card-based combat system, settlement management, and material quality crafting cascades.
+      </p>
+    </div>
+
+    <div class="project-entry">
+      <div class="job-header">
+        <span class="job-title">hackersim.io (Cybersecurity Education Platform)</span>
+        <span class="job-period">Active Development</span>
+      </div>
+      <p class="job-description">
+        Building browser-based cybersecurity learning platform featuring realistic Linux virtual machines, real exploits, and procedural web challenges.
+        Focus on hands-on pentesting training through live vulnerable targets. Currently used by educational institutions.
+      </p>
+    </div>
+
+    <div class="project-entry">
+      <div class="job-header">
+        <span class="job-title">skanujzdrowie.pl (Medical Testing E-Commerce)</span>
+        <span class="job-period">Co-Building</span>
+      </div>
+      <p class="job-description">
+        Co-developing e-commerce platform for online cancer screening tests in partnership with Novazym laboratory.
+        Features include order management, test kit logistics, result delivery, and secure patient portal with automated communication workflows.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- CERTIFICATIONS & EDUCATION -->
+  <section>
+    <h2>Education & Continuous Learning</h2>
+    <p class="summary">
+      <strong>Self-directed continuous learning path</strong> focused on emerging security threats, AI/ML integration, and modern full-stack development practices.
+      Regular participation in cybersecurity conferences, CTF competitions, and open-source community contributions.
+      Maintain expertise through hands-on projects, threat intelligence research, and mentoring junior engineers.
+    </p>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section>
+    <h2>Languages</h2>
+    <p><strong>English</strong> — Fluent (professional level, technical communication)</p>
+    <p><strong>Polish</strong> — Native</p>
+  </section>
+
+</div>
+
+</body>
+</html>

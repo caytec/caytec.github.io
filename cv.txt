@@ -1,0 +1,144 @@
+KAJETAN KUPAJ
+Cybersecurity Engineer & Full-Stack Developer
+Warsaw, Poland | k.kupaj@aipol.com.pl | +48 [phone]
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PROFESSIONAL SUMMARY
+
+Cybersecurity specialist and full-stack developer with 6+ years of experience in CERT operations, incident response, malware analysis, application security, and enterprise software development. Lead technical architect at aipol.com.pl designing custom software, AI automation solutions, and security services. Proven expertise in building scalable systems, threat hunting automation, and mentoring development teams on security best practices. Bilingual professional (English / Polish) with strong communication skills in international settings.
+
+Keywords: Incident Response, Malware Analysis, Python, JavaScript, Full-Stack Development, Splunk, Application Security, AI Agents, LLM Integration, Penetration Testing, SIEM, Cloud Architecture, Threat Intelligence, Leadership, SaaS Development
+
+═══════════════════════════════════════════════════════════════════════════════
+
+WORK EXPERIENCE
+
+FOUNDER & TECHNICAL LEAD
+aipol.com.pl
+Warsaw, Poland | 2022 — Present
+
+Co-building Polish IT services company as lead technical person. Architecting and delivering custom software solutions, AI automation workflows, and comprehensive security services for enterprise clients.
+
+• Technical Leadership: Design and oversee architecture for multi-tenant SaaS platforms, e-commerce integrations, and enterprise automation solutions
+• AI & Automation: Architect and deploy custom LLM-based agents and AI automation workflows for business process optimization
+• Security Services: Conduct infrastructure audits, penetration tests, and security assessments; provide remediation guidance to clients
+• Product Development: Co-developing skanujzdrowie.pl medical testing platform (e-commerce + patient portal) with Novazym laboratory
+• Portfolio Projects: Building hackersim.io — cybersecurity education platform with browser-based labs and realistic exploit simulations
+• Full-Stack Development: Python, JavaScript (Node.js, React), API design, database architecture (PostgreSQL, MongoDB)
+
+FULLSTACK DEVELOPER & SPLUNK SPECIALIST
+Citibank
+Warsaw, Poland — Global Security Operations | 2020 — 2022
+
+Developed dashboards and search optimization tools for global storage infrastructure monitoring. Modernized legacy systems using Python full-stack development.
+
+• Designed and deployed complex Splunk dashboards analyzing terabytes of infrastructure data across global datacenters
+• Built custom Python/Flask/SQL search engine for storage server fleet management, reducing query times by 60%
+• Rewrote legacy Java application into modern Python full-stack application, improving maintainability and performance
+• Collaborated with security operations team on automated alerting and threat correlation
+
+APPLICATION SECURITY CONSULTANT
+GlaxoSmithKline (GSK)
+Remote (Global) | 2019 — 2020
+
+Sole administrator of security policy management platform. Provided security training and guidelines to development teams.
+
+• Sole SDElements platform administrator for entire corporation; managed security policy workflows and compliance tracking
+• Developed and delivered security guidelines, code review standards, and training materials for development teams
+• Partnered with development leadership on secure SDLC implementation
+
+SECURITY ANALYST
+Aviva
+Warsaw, Poland — Global Security Operations Center | 2019
+
+Daily threat analysis and incident triage for global insurance operations. Built automated phishing detection and analysis tooling.
+
+• Performed daily threat analysis, alert triage, and incident assessment for GSOC
+• Automated phishing email analysis tool using Python, reducing manual review time by 70%
+
+IT SECURITY ENGINEER (MID)
+Comtegra
+Warsaw, Poland | 2018 — 2019
+
+Implemented endpoint protection and data loss prevention solutions. Detected and analyzed advanced threats.
+
+• Deployed Symantec DLP and SEP across enterprise infrastructure
+• First to detect and fully analyze a failed targeted campaign; provided comprehensive C2C analysis
+
+IT ADMINISTRATOR
+Heritage Real Estate
+Warsaw, Poland | 2017 — 2018
+
+Managed IT infrastructure and built custom ticketing system for 300+ user organization.
+
+• Managed IT infrastructure for 300+ end users; handled hardware, networking, and software distribution
+• Designed and implemented custom ticketing and helpdesk system from scratch
+
+JUNIOR IT SECURITY SPECIALIST
+ComCERT SA
+Warsaw, Poland | 2016 — 2017
+
+Started security career handling incident response and malware analysis. Automated threat intelligence gathering.
+
+• Handled Tier 1 and Tier 2 incident response; investigated security alerts and contained threats
+• Reverse-engineered malware families including DanaBot and TrickBot; documented findings for threat intelligence
+• Automated deepweb threat intelligence scanning, significantly reducing manual monitoring workload
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TECHNICAL SKILLS
+
+PROGRAMMING LANGUAGES & FRAMEWORKS
+• Programming Languages: Python, JavaScript, SQL, Java, Bash
+• Web Frameworks: React, Node.js, Flask, FastAPI
+• Frontend: HTML5, CSS3, JavaScript ES6+
+• Databases: PostgreSQL, MongoDB, Redis, SQLite
+
+CYBERSECURITY & TOOLS
+• SIEM & Monitoring: Splunk, ELK Stack, Prometheus, Grafana
+• Security Tools: Metasploit, Burp Suite, OWASP ZAP, Wireshark, nmap
+• Incident Response: Threat hunting, malware analysis, log analysis, YARA rules, forensics
+• Penetration Testing: Web application security, infrastructure testing, social engineering simulations
+
+AI & AUTOMATION
+• LLM Integration: OpenAI APIs, Claude API, prompt engineering, RAG systems
+• Automation: Workflow orchestration, data pipelines, bot development, process automation
+• Analytics: Data analysis, visualization, predictive modeling
+
+CLOUD & INFRASTRUCTURE
+• Cloud Platforms: AWS, Google Cloud, Fly.io, Vercel
+• DevOps: Docker, GitHub Actions, CI/CD pipelines, monitoring and alerting
+• Architecture: Microservices, SaaS design, multi-tenant systems, REST APIs, WebSocket development
+
+APPLICATION SECURITY
+• Code review, vulnerability assessment, penetration testing, secure SDLC implementation
+• OWASP Top 10, CWE remediation, CVSS scoring, compliance frameworks (GDPR, SOC 2)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PROJECTS & ACHIEVEMENTS
+
+HARSH MEDIEVAL WORLD (BROWSER MMO) — In Production
+Solo-built persistent browser-based MMO set in harsh medieval world. Built with vanilla JavaScript, Canvas API for rendering, and WebSocket backend. Hosts 1000+ simultaneous players on Fly.io infrastructure. Features include player-driven economy, card-based combat system, settlement management, and material quality crafting cascades.
+
+HACKERSIM.IO (CYBERSECURITY EDUCATION PLATFORM) — Active Development
+Building browser-based cybersecurity learning platform featuring realistic Linux virtual machines, real exploits, and procedural web challenges. Focus on hands-on pentesting training through live vulnerable targets. Currently used by educational institutions.
+
+SKANUJZDROWIE.PL (MEDICAL TESTING E-COMMERCE) — Co-Building
+Co-developing e-commerce platform for online cancer screening tests in partnership with Novazym laboratory. Features include order management, test kit logistics, result delivery, and secure patient portal with automated communication workflows.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+EDUCATION & CONTINUOUS LEARNING
+
+Self-directed continuous learning path focused on emerging security threats, AI/ML integration, and modern full-stack development practices. Regular participation in cybersecurity conferences, CTF competitions, and open-source community contributions. Maintain expertise through hands-on projects, threat intelligence research, and mentoring junior engineers.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+LANGUAGES
+
+English — Fluent (professional level, technical communication)
+Polish — Native
+
+═══════════════════════════════════════════════════════════════════════════════
