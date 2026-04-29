@@ -1,0 +1,25 @@
+🔍 Looking for a Challenging Project
+
+I'm actively seeking an interesting challenge — whether it's a full-time role, consulting engagement, or collaborative project in Warsaw or remote.
+
+6+ years of experience spanning CERT operations, incident response, malware analysis, and enterprise software development. I help teams build secure, scalable systems and automate complex workflows using modern tech stacks (Python, JavaScript, Splunk, AWS, AI agents).
+
+Currently leading technical architecture at aipol.com.pl where I deliver custom software, security services, and AI automation. Building hackersim.io (cybersecurity education platform) and shipping real products like skanujzdrowie.pl (medical testing e-commerce).
+
+**What I bring to the table:**
+→ Full-stack development expertise (Python, JavaScript, React, Node.js, databases)
+→ Cybersecurity depth (threat hunting, incident response, penetration testing, secure SDLC)
+→ AI & automation (LLM integration, workflow orchestration, data pipelines)
+→ Leadership & mentorship (scaling teams, technical decision-making)
+→ Bilingual communication (English/Polish) in international environments
+
+**Portfolio:** caytec.github.io
+**CV:** caytec.github.io/cv.html
+
+If you're looking for someone who combines security thinking with solid engineering, who builds tools that actually work, and who's committed to long-term collaboration over quick wins — let's talk.
+
+📧 Reach out: k.kupaj@aipol.com.pl
+
+I'm excited about projects with real impact. Let's create something great together. 💻🛡️
+
+#Cybersecurity #FullStackDeveloper #Python #JavaScript #Hiring #Warsaw #Remote #TechLeadership
