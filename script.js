@@ -433,6 +433,7 @@ function initDesktop() {
   setTimeout(() => showLanguageTooltip(), 4100);
   initMailCharCount();
   animateSkillBars();
+  initSlideshows();
 }
 
 function updateClock() {
@@ -1007,6 +1008,44 @@ async function sendMail() {
 
   setMailStatus('⏳ Sending…', 'sending');
   document.getElementById('mail-send-btn').disabled = true;
+
+// ─── Slideshow Functions ───────────────────────────────────────────────────────
+
+function changeSlide(containerId, direction) {
+  const container = document.getElementById(containerId);
+  const slides = container.querySelectorAll('.slide');
+  const dots = document.getElementById(containerId.replace('slideshow', 'dots')).querySelectorAll('.dot');
+  let current = Array.from(slides).findIndex(s => s.classList.contains('active')) || 0;
+
+  slides[current].classList.remove('active');
+  dots[current].classList.remove('active');
+
+  current = (current + direction + slides.length) % slides.length;
+
+  slides[current].classList.add('active');
+  dots[current].classList.add('active');
+}
+
+function goToSlide(containerId, index) {
+  const container = document.getElementById(containerId);
+  const slides = container.querySelectorAll('.slide');
+  const dots = document.getElementById(containerId.replace('slideshow', 'dots')).querySelectorAll('.dot');
+
+  slides.forEach(s => s.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
+}
+
+function initSlideshows() {
+  document.querySelectorAll('.slideshow-container').forEach(container => {
+    const slides = container.querySelectorAll('.slide');
+    if (slides.length > 0) {
+      slides[0].classList.add('active');
+    }
+  });
+}
 
   try {
     await emailjs.send(

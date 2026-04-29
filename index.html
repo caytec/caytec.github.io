@@ -406,6 +406,35 @@
           <p class="about-text" data-i18n="hs-desc1">
             Realistic hacking simulation platform built after hours — learn cybersecurity by doing, not watching videos. Simulated Linux environment with real terminal mechanics, network topology, and CVE-based vulnerabilities — all safely sandboxed. Every scenario drawn from real incidents.
           </p>
+
+          <!-- Hackersim Slideshow -->
+          <div class="slideshow-container" id="hackersim-slideshow">
+            <div class="slideshow-wrapper">
+              <div class="slide">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%231a1a2e' width='1280' height='720'/%3E%3Ctext x='640' y='360' font-family='monospace' font-size='32' fill='%2300d4ff' text-anchor='middle' dominant-baseline='middle'%3E🌐 HACKERSIM Dashboard%3C/text%3E%3Ctext x='640' y='400' font-family='monospace' font-size='14' fill='%236272a4' text-anchor='middle'%3ELive Hacking Labs - Level 6%3C/text%3E%3C/svg%3E" alt="HackerSim Dashboard">
+              </div>
+              <div class="slide">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%231a1a2e' width='1280' height='720'/%3E%3Ctext x='640' y='360' font-family='monospace' font-size='32' fill='%2300d4ff' text-anchor='middle' dominant-baseline='middle'%3E⌨️ Terminal Exploits%3C/text%3E%3Ctext x='640' y='400' font-family='monospace' font-size='14' fill='%236272a4' text-anchor='middle'%3EReal Vulnerabilities - Hands-on Learning%3C/text%3E%3C/svg%3E" alt="Terminal Exploits">
+              </div>
+              <div class="slide">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%231a1a2e' width='1280' height='720'/%3E%3Ctext x='640' y='360' font-family='monospace' font-size='32' fill='%2300d4ff' text-anchor='middle' dominant-baseline='middle'%3E🎯 Network Mapping%3C/text%3E%3Ctext x='640' y='400' font-family='monospace' font-size='14' fill='%236272a4' text-anchor='middle'%3EInteractive Topology Visualization%3C/text%3E%3C/svg%3E" alt="Network Mapping">
+              </div>
+              <div class="slide">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%231a1a2e' width='1280' height='720'/%3E%3Ctext x='640' y='360' font-family='monospace' font-size='32' fill='%2300d4ff' text-anchor='middle' dominant-baseline='middle'%3E🏪 Shop Exploits%3C/text%3E%3Ctext x='640' y='400' font-family='monospace' font-size='14' fill='%236272a4' text-anchor='middle'%3EUnlock Tools & Techniques%3C/text%3E%3C/svg%3E" alt="Shop Exploits">
+              </div>
+            </div>
+            <div class="slideshow-controls">
+              <button class="slide-btn prev" onclick="changeSlide('hackersim-slideshow', -1)">‹</button>
+              <div class="slide-dots" id="hackersim-dots">
+                <span class="dot active" onclick="goToSlide('hackersim-slideshow', 0)"></span>
+                <span class="dot" onclick="goToSlide('hackersim-slideshow', 1)"></span>
+                <span class="dot" onclick="goToSlide('hackersim-slideshow', 2)"></span>
+                <span class="dot" onclick="goToSlide('hackersim-slideshow', 3)"></span>
+              </div>
+              <button class="slide-btn next" onclick="changeSlide('hackersim-slideshow', 1)">›</button>
+            </div>
+          </div>
+
           <div class="tech-stack" style="margin-top:10px;">
             <div style="font-size:10px;color:var(--text-dim);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Frontend:</div>
             <span class="tech-pill">React</span><span class="tech-pill">TypeScript</span><span class="tech-pill">Vite</span>
