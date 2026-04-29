@@ -2,7 +2,9 @@
 
 Poszukuję interesującego wyzwania — czy to stanowiska na pełny etat, zlecenia consulting, czy wspólnego projektu w Warszawie lub zdalnie.
 
-6+ lat doświadczenia w operacjach CERT, reagowaniu na incydenty, analizie malware'u i tworzeniu oprogramowania dla dużych organizacji. Pomagam zespołom budować bezpieczne, skalowalne systemy i automatyzować złożone procesy biznesowe.
+**Blisko 10 lat w branży IT. 6+ lat specjalizacji w cyberbezpieczeństwie.**
+
+Przywdziewam niemal dekadę doświadczenia w IT z głęboką specjalizacją przez 6+ lat w operacjach CERT, reagowaniu na incydenty, analizie malware'u i bezpieczeństwie enterprise. Pomagam zespołom budować bezpieczne, skalowalne systemy i automatyzować złożone procesy biznesowe.
 
 Aktualnie prowadzę architekturę techniczną w aipol.com.pl, gdzie dostarczam oprogramowanie na zamówienie, usługi bezpieczeństwa i rozwiązania do automatyzacji. Jednocześnie buduję hackersim.io (platformę do nauki cyberbezpieczeństwa) i rozwijam skanujzdrowie.pl (e-commerce testów medycznych).
 

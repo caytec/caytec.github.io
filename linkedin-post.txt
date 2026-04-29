@@ -2,7 +2,9 @@
 
 I'm actively seeking an interesting challenge — whether it's a full-time role, consulting engagement, or collaborative project in Warsaw or remote.
 
-6+ years of experience spanning CERT operations, incident response, malware analysis, and enterprise software development. I help teams build secure, scalable systems and automate complex workflows using modern tech stacks (Python, JavaScript, Splunk, AWS, AI agents).
+**10 years in IT. 6+ years specializing in cybersecurity.**
+
+I bring nearly a decade of IT experience with 6+ years deep expertise in CERT operations, incident response, malware analysis, and enterprise security. I help teams build secure, scalable systems and automate complex workflows using modern tech stacks (Python, JavaScript, Splunk, AWS, AI agents).
 
 Currently leading technical architecture at aipol.com.pl where I deliver custom software, security services, and AI automation. Building hackersim.io (cybersecurity education platform) and shipping real products like skanujzdrowie.pl (medical testing e-commerce).
 

@@ -8,7 +8,7 @@ Warsaw, Poland | coopaisolutions@gmail.com | +48 692 302 342 | [caytec.github.io
 
 ## Professional Summary
 
-**Cybersecurity specialist and full-stack developer with 6+ years of experience** spanning CERT operations, incident response, malware analysis, application security, and enterprise software development. **Lead technical architect at aipol.com.pl** designing custom software, AI automation solutions, and comprehensive security services for enterprise clients. Proven expertise in building scalable systems, automating threat hunting workflows, mentoring development teams on security best practices, and delivering high-impact technical solutions under pressure.
+**Full-stack engineer and cybersecurity specialist with nearly 10 years of IT experience, including 6+ years of deep cybersecurity expertise** spanning CERT operations, incident response, malware analysis, application security, and enterprise software development. **Lead technical architect at aipol.com.pl** designing custom software, AI automation solutions, and comprehensive security services for enterprise clients. Proven expertise in building scalable systems, automating threat hunting workflows, mentoring development teams on security best practices, and delivering high-impact technical solutions under pressure.
 
 **Bilingual professional** (English / Polish) with strong technical communication skills in international environments and proven ability to translate complex security concepts for non-technical stakeholders.
 

@@ -6,7 +6,7 @@ Warsaw, Poland | coopaisolutions@gmail.com | +48 692 302 342
 
 PROFESSIONAL SUMMARY
 
-Cybersecurity specialist and full-stack developer with 6+ years of experience in CERT operations, incident response, malware analysis, application security, and enterprise software development. Lead technical architect at aipol.com.pl designing custom software, AI automation solutions, and security services. Proven expertise in building scalable systems, threat hunting automation, and mentoring development teams on security best practices. Bilingual professional (English / Polish) with strong communication skills in international settings.
+Full-stack engineer and cybersecurity specialist with nearly 10 years of IT experience, including 6+ years of deep cybersecurity expertise spanning CERT operations, incident response, malware analysis, application security, and enterprise software development. Lead technical architect at aipol.com.pl designing custom software, AI automation solutions, and security services. Proven expertise in building scalable systems, threat hunting automation, and mentoring development teams on security best practices. Bilingual professional (English / Polish) with strong communication skills in international settings.
 
 Keywords: Incident Response, Malware Analysis, Python, JavaScript, Full-Stack Development, Splunk, Application Security, AI Agents, LLM Integration, Penetration Testing, SIEM, Cloud Architecture, Threat Intelligence, Leadership, SaaS Development
 
