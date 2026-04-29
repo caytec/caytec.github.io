@@ -427,7 +427,10 @@ function initDesktop() {
   setTimeout(() => openWindow('projects'), 1100);
   setTimeout(() => openWindow('experience'), 1600);
   setTimeout(() => openWindow('about'), 2100);
-  setTimeout(() => showLanguageTooltip(), 2500);
+  setTimeout(() => openWindow('services'), 2600);
+  setTimeout(() => openWindow('mail'), 3100);
+  setTimeout(() => openWindow('contact'), 3600);
+  setTimeout(() => showLanguageTooltip(), 4100);
   initMailCharCount();
   animateSkillBars();
 }
