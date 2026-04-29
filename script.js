@@ -307,7 +307,7 @@ function updateLanguage(lang) {
   const langBtn = document.getElementById('lang-toggle-btn');
   if (langBtn) {
     const nextLang = lang === 'en' ? 'pl' : 'en';
-    const flagEmoji = nextLang === 'en' ? '🇬🇧' : '🇵🇱';
+    const flagEmoji = nextLang === 'en' ? '🇺🇸 EN' : '🇵🇱 PL';
     langBtn.textContent = flagEmoji;
     langBtn.title = nextLang === 'en' ? 'Switch to English' : 'Przełącz na Polski';
     langBtn.onclick = (e) => { e.preventDefault(); updateLanguage(nextLang); };
@@ -327,7 +327,7 @@ function showLanguageTooltip() {
       setTimeout(() => {
         tooltip.classList.remove('show');
         setTimeout(() => tooltip.remove(), 300);
-      }, 3000);
+      }, 6000);
     }, 100);
   }
 }
@@ -423,10 +423,10 @@ function initDesktop() {
   updateLanguage(currentLanguage);
   openWindow('terminal');
   setTimeout(() => { printWelcome(); }, 100);
-  setTimeout(() => openWindow('about'), 600);
-  setTimeout(() => openWindow('experience'), 1100);
-  setTimeout(() => openWindow('projects'), 1600);
-  setTimeout(() => openWindow('skills'), 2100);
+  setTimeout(() => openWindow('skills'), 600);
+  setTimeout(() => openWindow('projects'), 1100);
+  setTimeout(() => openWindow('experience'), 1600);
+  setTimeout(() => openWindow('about'), 2100);
   setTimeout(() => showLanguageTooltip(), 2500);
   initMailCharCount();
   animateSkillBars();
@@ -442,7 +442,7 @@ function updateClock() {
 
 const windowState = {};
 let zCounter = 100;
-const CASCADE_OFFSETS = { terminal: [40,40], about: [380,60], experience: [720,60], projects: [720,520], skills: [40,520], services: [380,520], mail: [1100,60], contact: [1100,520] };
+const CASCADE_OFFSETS = { terminal: [40,40], skills: [40,520], projects: [720,520], experience: [720,60], about: [380,60], services: [380,520], mail: [1100,60], contact: [1100,520] };
 
 function openWindow(id) {
   const el = document.getElementById(`win-${id}`);
