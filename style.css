@@ -31,7 +31,7 @@ html, body {
   width: 100%; height: 100%;
   overflow: hidden;
   font-family: var(--font);
-  background: var(--bg);
+  background: var(--bg) url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1280 720%22%3E%3Cdefs%3E%3ClinearGradient id=%22grad1%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:rgb(0,50,100);stop-opacity:0.3%22 /%3E%3Cstop offset=%22100%25%22 style=%22stop-color:rgb(0,212,255);stop-opacity:0.1%22 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221280%22 height=%22720%22 fill=%22url(%23grad1)%22/%3E%3Ctext x=%22640%22 y=%22360%22 font-family=%22monospace%22 font-size=%2280%22 fill=%22%2300d4ff%22 opacity=%220.15%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 font-weight=%22bold%22%3EHACKERSIM%3C/text%3E%3Ctext x=%22640%22 y=%22420%22 font-family=%22monospace%22 font-size=%2224%22 fill=%22%2300d4ff%22 opacity=%220.08%22 text-anchor=%22middle%22%3ELearn by Doing%3C/text%3E%3C/svg%3E') center/cover no-repeat fixed;
   color: var(--text);
   user-select: none;
 }
