@@ -605,6 +605,52 @@ a:hover { color: var(--green); text-decoration: underline; }
 .hl-v { color: #e0907c; font-weight: 600; }  /* Witalność — red   */
 
 /* ═══════════════════════════════
+   Language Tooltip
+   ═══════════════════════════════ */
+.lang-tooltip {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: var(--accent2);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 10000;
+  box-shadow: 0 4px 16px rgba(123, 47, 255, 0.4);
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  text-align: center;
+  animation: tooltipPulse 0.5s ease-in-out;
+}
+
+.lang-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes tooltipPulse {
+  0% { transform: translateY(10px) scale(0.95); opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+#lang-toggle-btn {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 6px 10px;
+  transition: all 0.2s ease;
+}
+
+#lang-toggle-btn:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 4px var(--accent2));
+}
+
+/* ═══════════════════════════════
    Responsive
    ═══════════════════════════════ */
 @media (max-width: 768px) {
@@ -613,4 +659,5 @@ a:hover { color: var(--green); text-decoration: underline; }
   .about-left { width: 100%; flex-direction: row; gap: 20px; }
   .services-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr 1fr; }
+  .lang-tooltip { bottom: 70px; right: 10px; font-size: 12px; }
 }
