@@ -129,15 +129,15 @@ Building browser-based cybersecurity learning platform featuring realistic Linux
 
 Co-developing e-commerce platform for online cancer screening tests. Features include order management system, test kit logistics integration, secure result delivery, patient portal with automated communication workflows, and integration with laboratory management systems.
 
-### 2headphones1audio (Web Audio Tool)
-**Open Source | [caytec.github.io/2headphones1audio](https://caytec.github.io/2headphones1audio/)**
+### 1audio2headphones (Open Source · Web Audio Tool)
+**Released Free | [caytec.github.io/1audio2headphones](https://caytec.github.io/1audio2headphones/)**
 
-Browser-based tool that synchronizes audio playback across two pairs of headphones connected to one device. Solves real-world problem of sharing media without Bluetooth pairing. Pure browser solution using Web Audio API for channel splitting and routing — no installs, no permissions, just works.
+Browser-based tool solving synchronized audio playback across two pairs of headphones from one device — no hardware splitters (which cause volume drops), no Bluetooth pairing, no driver hacks. **Released as free open-source alternative** to paid audio routing software ($30-100 commercial equivalents). Pure Web Audio API solution — no installs, no permissions, just open and use.
 
-### FreeSystemDoctor (Windows Diagnostic Tool)
-**Open Source | [caytec.github.io/FreeSystemDoctor](https://caytec.github.io/FreeSystemDoctor/)**
+### FreeSystemDoctor (Open Source · Windows Diagnostic Tool)
+**Released Free | [github.com/caytec/freesystemdoctor](https://github.com/caytec/freesystemdoctor)**
 
-Comprehensive free Windows diagnostic and repair tool — alternative to predatory "PC cleaner" software. Scans hardware health, performance bottlenecks, system integrity, registry issues, and security vulnerabilities. One-click auto-fix for common problems. No subscriptions, no bloatware, no false alarms. Built with PowerShell, Python, Windows API, and WMI.
+Comprehensive Windows diagnostic and repair toolkit — built specifically as **free open-source alternative** to predatory "PC cleaner" software (CCleaner Pro, IObit, Restoro) that charge $30-50/year subscriptions for what Windows does for free. Scans hardware health, performance bottlenecks, system integrity, registry issues, and security vulnerabilities. **No subscriptions, no upsells, no false alarms inflating issue counts to pressure users into paying.** Honest open-source code anyone can audit. Built with PowerShell, Python, Windows API, and WMI.
 
 ---
 

@@ -605,6 +605,57 @@ a:hover { color: var(--green); text-decoration: underline; }
 .hl-v { color: #e0907c; font-weight: 600; }  /* Witalność — red   */
 
 /* ═══════════════════════════════
+   Open Source Banner
+   ═══════════════════════════════ */
+.opensource-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  background: linear-gradient(135deg, rgba(80, 250, 123, 0.1) 0%, rgba(0, 212, 255, 0.08) 100%);
+  border: 1px solid var(--green);
+  border-left: 3px solid var(--green);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.opensource-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(80, 250, 123, 0.1), transparent 50%);
+  pointer-events: none;
+}
+
+.os-banner-icon {
+  font-size: 32px;
+  filter: drop-shadow(0 0 6px var(--green));
+  flex-shrink: 0;
+}
+
+.os-banner-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.os-banner-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.os-banner-desc {
+  font-size: 11px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════
    Feature Boxes (Hackersim)
    ═══════════════════════════════ */
 .features-grid {
@@ -665,21 +716,26 @@ a:hover { color: var(--green); text-decoration: underline; }
 .slideshow-wrapper {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 240px;
   overflow: hidden;
-  background: var(--bg);
+  background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 50%, #16213e 100%);
 }
 
 .slide {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 }
 
 .slide.active {
   opacity: 1;
+  visibility: visible;
 }
 
 .slide img {
@@ -687,6 +743,121 @@ a:hover { color: var(--green); text-decoration: underline; }
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.slide-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.15) inset;
+}
+
+.slide-emoji {
+  font-size: 32px;
+  filter: drop-shadow(0 0 8px var(--accent));
+}
+
+.slide-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+}
+
+.slide-subtitle {
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+}
+
+.slide-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.slide-tags span {
+  font-size: 10px;
+  padding: 3px 8px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.slide-grid-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+.slide-items, .slide-news-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--text);
+  text-align: left;
+  width: 100%;
+  max-width: 280px;
+}
+
+.slide-items > div, .slide-news-items > div {
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 2px solid var(--accent);
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rarity {
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+.rarity.epic    { background: rgba(189, 147, 249, 0.2); color: var(--purple); }
+.rarity.rare    { background: rgba(80, 250, 123, 0.2);  color: var(--green); }
+.rarity.legendary { background: rgba(255, 184, 108, 0.2); color: var(--orange); }
+
+.slide-code {
+  font-family: var(--font);
+  font-size: 11px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin-top: 6px;
+  width: 100%;
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+.slide-code .cmt { color: var(--text-dim); }
+.slide-code .kw  { color: var(--purple); font-weight: 600; }
+.slide-code .fn  { color: var(--accent); }
+.slide-code .str { color: var(--green); }
+
+.slide-news-items em {
+  color: var(--text-dim);
+  font-style: italic;
 }
 
 .slideshow-controls {

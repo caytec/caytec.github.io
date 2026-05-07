@@ -128,11 +128,13 @@ Building browser-based cybersecurity learning platform featuring realistic Linux
 SKANUJZDROWIE.PL (MEDICAL TESTING E-COMMERCE) — Co-Building
 Co-developing e-commerce platform for online cancer screening tests in partnership with Novazym laboratory. Features include order management, test kit logistics, result delivery, and secure patient portal with automated communication workflows.
 
-2HEADPHONES1AUDIO (WEB AUDIO TOOL) — Open Source · GitHub Pages
-Browser-based tool that synchronizes audio playback across two pairs of headphones connected to one device. Solves real-world problem of sharing media without Bluetooth pairing. Pure browser solution using Web Audio API for channel splitting and routing. Live: caytec.github.io/2headphones1audio
+1AUDIO2HEADPHONES (OPEN SOURCE · WEB AUDIO TOOL) — Released Free
+Browser-based tool solving synchronized audio playback across two pairs of headphones from one device — no hardware splitters, no Bluetooth pairing, no driver hacks. Released as free open-source alternative to paid audio routing software ($30-100 commercial equivalents). Pure Web Audio API solution.
+Live demo: https://caytec.github.io/1audio2headphones/
 
-FREESYSTEMDOCTOR (WINDOWS DIAGNOSTIC TOOL) — Open Source · GitHub Pages
-Comprehensive free Windows diagnostic and repair tool — alternative to predatory "PC cleaner" software. Scans hardware health, performance bottlenecks, system integrity, registry issues, and security vulnerabilities. One-click auto-fix for common problems. No subscriptions, no bloatware. Live: caytec.github.io/FreeSystemDoctor
+FREESYSTEMDOCTOR (OPEN SOURCE · WINDOWS DIAGNOSTIC TOOL) — Released Free
+Comprehensive Windows diagnostic and repair toolkit — built as free open-source alternative to predatory "PC cleaner" software (CCleaner Pro, IObit, Restoro) that charge $30-50/year subscriptions for what Windows does for free. Scans hardware health, performance bottlenecks, system integrity, registry, and security vulnerabilities. No subscriptions, no upsells, no false alarms inflating issue counts to scare users into paying.
+Repository: https://github.com/caytec/freesystemdoctor
 
 ═══════════════════════════════════════════════════════════════════════════════
 
