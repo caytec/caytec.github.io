@@ -800,10 +800,398 @@ a:hover { color: var(--green); text-decoration: underline; }
   height: 100%;
   object-fit: contain;
   display: block;
+}
+
+/* ─── HackerSim Mockup Slides ─────────────────────────────── */
+.hs-mock {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  font-family: var(--font);
+}
+
+/* SLIDE 1: Logo */
+.hs-mock-logo {
+  background: radial-gradient(ellipse at center, #0d2540 0%, #050818 70%, #000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mock-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 255, 200, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 200, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-pan 8s linear infinite;
+}
+
+@keyframes grid-pan {
+  to { background-position: 40px 40px; }
+}
+
+.mock-bg-circuit {
+  position: absolute;
+  inset: 0;
   background:
-    linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(123, 47, 255, 0.05)),
-    repeating-linear-gradient(45deg, rgba(0, 212, 255, 0.03) 0 2px, transparent 2px 12px),
-    #0a0a1f;
+    radial-gradient(circle at 30% 50%, rgba(0, 255, 200, 0.15), transparent 40%),
+    radial-gradient(circle at 70% 50%, rgba(0, 200, 255, 0.12), transparent 40%);
+}
+
+.mock-bg-binary {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-content: space-between;
+  padding: 14px;
+  font-size: 11px;
+  color: rgba(0, 255, 150, 0.35);
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
+.mock-bg-binary span:nth-child(2n) { text-align: right; }
+
+.mock-logo-wrap {
+  position: relative;
+  z-index: 2;
+  padding: 26px 50px;
+  background: linear-gradient(135deg, #1a3a5a 0%, #0a1a30 100%);
+  border: 3px solid;
+  border-image: linear-gradient(135deg, #50fa7b, #00d4ff, #50fa7b) 1;
+  box-shadow:
+    0 0 40px rgba(0, 255, 200, 0.4),
+    inset 0 0 30px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.mock-logo-text {
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  background: linear-gradient(180deg, #b8d8e8 0%, #50fa7b 50%, #2a8a5a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  font-family: 'Impact', sans-serif;
+}
+
+.mock-logo-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%, 70% { left: -100%; }
+  100%    { left: 200%; }
+}
+
+/* SLIDE 2: Desktop */
+.hs-mock-desktop {
+  background: linear-gradient(135deg, #0a1525 0%, #050a18 100%);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mock-topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  font-size: 10px;
+  color: var(--text);
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.mock-user { color: var(--green); font-weight: 700; }
+.mock-user em { color: var(--accent); font-style: normal; margin-left: 4px; }
+.mock-stat { color: var(--text-dim); }
+.mock-stat.tag-white {
+  background: rgba(80, 250, 123, 0.15);
+  border: 1px solid var(--green);
+  padding: 1px 6px;
+  border-radius: 2px;
+  color: var(--green);
+  font-weight: 700;
+}
+.mock-brand {
+  margin-left: auto;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.mock-app-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+  padding: 6px;
+}
+
+.mock-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 14px;
+  color: var(--accent);
+  background: rgba(0, 30, 50, 0.3);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 3px;
+  padding: 2px;
+  transition: all 0.2s;
+}
+
+.mock-app:hover { background: rgba(0, 212, 255, 0.15); border-color: var(--accent); }
+
+.mock-app span {
+  font-size: 8px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+/* SLIDE 3: Market + Phone */
+.hs-mock-market {
+  background: linear-gradient(135deg, #0a1525 0%, #050a18 100%);
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.mock-window {
+  background: rgba(15, 25, 40, 0.95);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.hs-mock-market .mock-window:first-child { flex: 2; }
+
+.mock-win-header {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  font-size: 10px;
+  color: var(--text);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  font-weight: 600;
+}
+
+.mock-win-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 6px 10px;
+}
+
+.mock-tab {
+  font-size: 9px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--text-dim);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.mock-tab.active {
+  background: var(--accent);
+  color: #000;
+}
+
+.mock-pill-row {
+  display: flex;
+  gap: 4px;
+  padding: 0 10px 8px;
+}
+
+.mock-pill {
+  font-size: 8px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dim);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mock-pill.active {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
+
+.mock-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 6px 10px 10px;
+  flex: 1;
+}
+
+.mock-card {
+  background: rgba(0, 30, 60, 0.5);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 9px;
+  color: var(--text-dim);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+}
+
+.mock-card b {
+  color: var(--text);
+  font-size: 10px;
+}
+
+.mock-card strong {
+  color: var(--green);
+  font-size: 11px;
+  margin-top: auto;
+}
+
+.mock-card span.r-epic, .mock-card span.r-rare, .mock-card span.r-leg {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 7px;
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+.r-epic { background: rgba(189, 147, 249, 0.25); color: var(--purple); }
+.r-rare { background: rgba(80, 250, 123, 0.25);  color: var(--green); }
+.r-leg  { background: rgba(255, 184, 108, 0.25); color: var(--orange); }
+
+.mock-phone {
+  width: 110px;
+  background: linear-gradient(180deg, #1a1a2e, #0d0d1a);
+  border: 2px solid #333;
+  border-radius: 14px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.mock-phone-time { font-size: 12px; color: var(--text); font-weight: 700; }
+.mock-phone-num { font-size: 8px; color: var(--text-dim); margin-bottom: 6px; }
+
+.mock-phone-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.mock-phone-grid > div {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: linear-gradient(135deg, #2a8a5a, #1a5a3a);
+  border-radius: 8px;
+}
+
+.mock-phone-grid > div:nth-child(2) { background: linear-gradient(135deg, #2a5aaa, #1a3a7a); }
+.mock-phone-grid > div:nth-child(3) { background: linear-gradient(135deg, #aa7a2a, #7a5a1a); }
+.mock-phone-grid > div:nth-child(4) { background: linear-gradient(135deg, #2a8acc, #1a5a8a); }
+.mock-phone-grid > div:nth-child(5) { background: linear-gradient(135deg, #aa3a3a, #7a1a1a); }
+.mock-phone-grid > div:nth-child(6) { background: linear-gradient(135deg, #555, #333); }
+
+/* SLIDE 4: IDE + News */
+.hs-mock-ide {
+  background: linear-gradient(135deg, #0a1525 0%, #050a18 100%);
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.mock-ide-win { flex: 3; }
+.mock-news-win { flex: 2; }
+
+.mock-ide-body {
+  display: flex;
+  flex: 1;
+  font-size: 10px;
+}
+
+.mock-explorer {
+  width: 100px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 8px;
+  font-size: 9px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  border-right: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.mock-explorer .active { color: var(--accent); font-weight: 600; }
+
+.mock-code {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 10px;
+  line-height: 1.5;
+  background: #0d1421;
+}
+
+.mock-code .cmt { color: var(--text-dim); }
+.mock-code .kw  { color: var(--purple); font-weight: 600; }
+.mock-code .fn  { color: var(--accent); }
+.mock-code .str { color: var(--green); }
+
+.mock-news {
+  flex: 1;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.mock-news-item {
+  background: rgba(0, 30, 50, 0.4);
+  border-left: 2px solid var(--accent);
+  padding: 5px 8px;
+  font-size: 9px;
+  border-radius: 2px;
+}
+
+.mock-news-item b {
+  display: block;
+  color: var(--accent);
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+
+.mock-news-item em {
+  color: var(--text-dim);
+  font-style: normal;
+  font-size: 9px;
+  line-height: 1.4;
 }
 
 .slide-caption {
@@ -820,120 +1208,6 @@ a:hover { color: var(--green); text-decoration: underline; }
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
-.slide-card {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 6px;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--accent);
-  border-radius: 6px;
-  box-shadow: 0 0 24px rgba(0, 212, 255, 0.15) inset;
-}
-
-.slide-emoji {
-  font-size: 32px;
-  filter: drop-shadow(0 0 8px var(--accent));
-}
-
-.slide-title {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: var(--accent);
-  text-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
-}
-
-.slide-subtitle {
-  font-size: 11px;
-  color: var(--text-dim);
-  letter-spacing: 0.5px;
-}
-
-.slide-tags {
-  display: flex;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.slide-tags span {
-  font-size: 10px;
-  padding: 3px 8px;
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid var(--accent);
-  border-radius: 3px;
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.slide-grid-icons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-top: 6px;
-  font-size: 18px;
-}
-
-.slide-items, .slide-news-items {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-top: 4px;
-  font-size: 11px;
-  color: var(--text);
-  text-align: left;
-  width: 100%;
-  max-width: 280px;
-}
-
-.slide-items > div, .slide-news-items > div {
-  padding: 4px 8px;
-  background: rgba(0, 0, 0, 0.3);
-  border-left: 2px solid var(--accent);
-  border-radius: 2px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.rarity {
-  font-size: 9px;
-  padding: 1px 5px;
-  border-radius: 2px;
-  font-weight: 700;
-}
-
-.rarity.epic    { background: rgba(189, 147, 249, 0.2); color: var(--purple); }
-.rarity.rare    { background: rgba(80, 250, 123, 0.2);  color: var(--green); }
-.rarity.legendary { background: rgba(255, 184, 108, 0.2); color: var(--orange); }
-
-.slide-code {
-  font-family: var(--font);
-  font-size: 11px;
-  text-align: left;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
-  padding: 8px 10px;
-  margin-top: 6px;
-  width: 100%;
-  max-width: 280px;
-  line-height: 1.5;
-}
-
-.slide-code .cmt { color: var(--text-dim); }
-.slide-code .kw  { color: var(--purple); font-weight: 600; }
-.slide-code .fn  { color: var(--accent); }
-.slide-code .str { color: var(--green); }
-
-.slide-news-items em {
-  color: var(--text-dim);
-  font-style: italic;
-}
 
 .slideshow-controls {
   display: flex;
