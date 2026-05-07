@@ -12,6 +12,42 @@ Interactive Kali Linux-themed portfolio with i18n language support (EN/PL) and p
 - **`cv.txt`** — Plain text CV (maximum ATS compatibility for scanning)
 - **`cv.md`** — Markdown CV (for LinkedIn, GitHub, easy DOCX conversion)
 
+## 🚂 Deploying to Railway
+
+This portfolio is configured for deployment on Railway. To deploy:
+
+1. **Connect repo:** In Railway dashboard → New Project → Deploy from GitHub → select `caytec/caytec.github.io`
+2. **Auto-detect:** Railway reads `railway.json` + `nixpacks.toml` automatically. No env vars required.
+3. **Build:** Runs `npm install --omit=dev` (production deps only, ~5s)
+4. **Start:** Runs `node server.js` — listens on `process.env.PORT`
+5. **Health check:** Railway pings `/health` to verify deployment
+6. **Custom domain:** Settings → Domains → add `kajetan.dev` (or any custom domain) and update DNS CNAME to Railway target
+
+### Local development
+
+```bash
+npm install
+npm start          # serves on http://localhost:3000
+```
+
+### Architecture
+
+- `server.js` — Express server, serves static files with cache headers, exposes `/health` endpoint
+- `package.json` — Node 18+ runtime, single dependency (express)
+- `railway.json` — Railway config (NIXPACKS builder, healthcheck path)
+- `nixpacks.toml` — Build phases (Node 20, npm install, start command)
+- `Procfile` — Fallback for Heroku-compatible platforms
+
+### Routes
+
+| Path | Serves |
+|------|--------|
+| `/` | `index.html` (interactive portfolio) |
+| `/cv` | `cv.html` (professional CV) |
+| `/cv.html`, `/cv.txt`, `/cv.md` | CV files directly |
+| `/health` | JSON `{status, uptime}` for Railway healthcheck |
+| `*` (404) | Falls back to `index.html` (SPA-like) |
+
 ## 🚀 Live Portfolio
 
 Portfolio is published on GitHub Pages: https://caytec.github.io

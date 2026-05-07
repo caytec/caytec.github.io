@@ -1,0 +1,29 @@
+{
+  "name": "kajetan-kupaj-portfolio",
+  "version": "1.0.0",
+  "description": "Cybersecurity & Full-Stack Developer Portfolio - Kali Linux themed interactive desktop",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "author": "Kajetan Kupaj <coopaisolutions@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caytec/caytec.github.io"
+  },
+  "keywords": [
+    "portfolio",
+    "cybersecurity",
+    "fullstack",
+    "kali-linux",
+    "developer"
+  ]
+}
