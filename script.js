@@ -109,6 +109,10 @@ const TRANSLATIONS = {
     'hm-settle-desc': 'Villages with rank hierarchies. Alliances, shared projects, competition for resources shape emergent player-driven politics.',
     'hm-faith': 'Altars & Oaths',
     'hm-faith-desc': 'Sacrifice at ancestor altars and swear oaths for bonuses at cost of constraints. Every choice has real price.',
+    'th-tagline': 'Synchronized audio streaming across two headphones — share the listening experience.',
+    'th-desc': 'Web tool that synchronizes audio playback across two pairs of headphones connected to one device. Perfect for sharing music, podcasts, or movies with someone nearby — no Bluetooth pairing needed. Pure browser solution using Web Audio API splitting and channel routing.',
+    'fsd-tagline': 'Free system diagnostics — scan, analyze, fix Windows issues without paid bloatware.',
+    'fsd-desc': 'Comprehensive Windows diagnostic and repair tool — no subscriptions, no bloatware, no false alarms. Scans hardware health, performance bottlenecks, system integrity, registry issues, and security vulnerabilities. Auto-fix common problems with one click. Built as alternative to predatory "PC cleaner" software.',
     'win-services': 'systemctl list-units --services',
     'svc-subtitle': 'Active services · aipol.com.pl · Kajetan Kupaj',
     'svc-audit': 'Security Audit',
@@ -249,6 +253,10 @@ const TRANSLATIONS = {
     'hm-settle-desc': 'Wioski z hierarchiami rang. Sojusze, wspólne projekty, konkurencja o zasoby tworzą emergentną politykę sterowaną przez graczy.',
     'hm-faith': 'Ołtarze & Przysięgi',
     'hm-faith-desc': 'Poświęć się na ołtarzach przodków i złóż przysięgi na bonusy kosztem ograniczeń. Każdy wybór ma rzeczywistą cenę.',
+    'th-tagline': 'Synchronizowane streamowanie audio na dwie pary słuchawek — dzielcie się dźwiękiem.',
+    'th-desc': 'Narzędzie webowe synchronizujące odtwarzanie audio na dwóch parach słuchawek podłączonych do jednego urządzenia. Idealne do dzielenia muzyki, podcastów lub filmów z osobą obok — bez parowania Bluetooth. Czyste rozwiązanie przeglądarkowe używając Web Audio API.',
+    'fsd-tagline': 'Darmowa diagnostyka systemu — skanuj, analizuj, naprawiaj problemy Windows bez płatnego bloatware.',
+    'fsd-desc': 'Kompleksowe narzędzie diagnostyczne i naprawcze dla Windows — bez subskrypcji, bez bloatware, bez fałszywych alarmów. Skanuje stan sprzętu, wąskie gardła wydajności, integralność systemu, problemy rejestru i podatności bezpieczeństwa. Auto-naprawa typowych problemów jednym kliknięciem. Zbudowane jako alternatywa dla drapieżnego oprogramowania "PC cleaner".',
     'win-services': 'systemctl list-units --usługi',
     'svc-subtitle': 'Aktywne usługi · aipol.com.pl · Kajetan Kupaj',
     'svc-audit': 'Audyt bezpieczeństwa',
@@ -421,16 +429,25 @@ function initDesktop() {
   initDragging();
   initResizing();
   updateLanguage(currentLanguage);
-  openWindow('terminal');
-  setTimeout(() => { printWelcome(); }, 100);
-  setTimeout(() => openWindow('skills'), 600);
-  setTimeout(() => openWindow('projects'), 1100);
-  setTimeout(() => openWindow('experience'), 1600);
-  setTimeout(() => openWindow('about'), 2100);
-  setTimeout(() => openWindow('services'), 2600);
-  setTimeout(() => openWindow('mail'), 3100);
-  setTimeout(() => openWindow('contact'), 3600);
-  setTimeout(() => showLanguageTooltip(), 4100);
+  // HR-friendly order — last opened = on top (closes first):
+  // 1. contact (closes first - already saw it)
+  // 2. mail (closes second - knows how to reach)
+  // 3. services (closes third - extra info)
+  // 4. terminal (closes fourth - decoration)
+  // 5. skills (closes fifth - skill matrix)
+  // 6. projects (closes sixth - portfolio proof)
+  // 7. experience (closes seventh - work history)
+  // 8. about (closes LAST - main user profile, most important)
+  openWindow('contact');
+  setTimeout(() => openWindow('mail'), 400);
+  setTimeout(() => openWindow('services'), 800);
+  setTimeout(() => openWindow('terminal'), 1200);
+  setTimeout(() => { printWelcome(); }, 1300);
+  setTimeout(() => openWindow('skills'), 1600);
+  setTimeout(() => openWindow('projects'), 2000);
+  setTimeout(() => openWindow('experience'), 2400);
+  setTimeout(() => openWindow('about'), 2800);
+  setTimeout(() => showLanguageTooltip(), 3300);
   initMailCharCount();
   animateSkillBars();
   initSlideshows();
@@ -446,7 +463,7 @@ function updateClock() {
 
 const windowState = {};
 let zCounter = 100;
-const CASCADE_OFFSETS = { terminal: [40,40], skills: [40,520], projects: [720,520], experience: [720,60], about: [380,60], services: [380,520], mail: [1100,60], contact: [1100,520] };
+const CASCADE_OFFSETS = { contact: [1100,520], mail: [1100,60], services: [380,520], terminal: [40,520], skills: [40,40], projects: [720,520], experience: [720,60], about: [380,60] };
 
 function openWindow(id) {
   const el = document.getElementById(`win-${id}`);

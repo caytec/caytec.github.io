@@ -129,6 +129,16 @@ Building browser-based cybersecurity learning platform featuring realistic Linux
 
 Co-developing e-commerce platform for online cancer screening tests. Features include order management system, test kit logistics integration, secure result delivery, patient portal with automated communication workflows, and integration with laboratory management systems.
 
+### 2headphones1audio (Web Audio Tool)
+**Open Source | [caytec.github.io/2headphones1audio](https://caytec.github.io/2headphones1audio/)**
+
+Browser-based tool that synchronizes audio playback across two pairs of headphones connected to one device. Solves real-world problem of sharing media without Bluetooth pairing. Pure browser solution using Web Audio API for channel splitting and routing — no installs, no permissions, just works.
+
+### FreeSystemDoctor (Windows Diagnostic Tool)
+**Open Source | [caytec.github.io/FreeSystemDoctor](https://caytec.github.io/FreeSystemDoctor/)**
+
+Comprehensive free Windows diagnostic and repair tool — alternative to predatory "PC cleaner" software. Scans hardware health, performance bottlenecks, system integrity, registry issues, and security vulnerabilities. One-click auto-fix for common problems. No subscriptions, no bloatware, no false alarms. Built with PowerShell, Python, Windows API, and WMI.
+
 ---
 
 ## Education & Continuous Learning

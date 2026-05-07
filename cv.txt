@@ -128,6 +128,12 @@ Building browser-based cybersecurity learning platform featuring realistic Linux
 SKANUJZDROWIE.PL (MEDICAL TESTING E-COMMERCE) — Co-Building
 Co-developing e-commerce platform for online cancer screening tests in partnership with Novazym laboratory. Features include order management, test kit logistics, result delivery, and secure patient portal with automated communication workflows.
 
+2HEADPHONES1AUDIO (WEB AUDIO TOOL) — Open Source · GitHub Pages
+Browser-based tool that synchronizes audio playback across two pairs of headphones connected to one device. Solves real-world problem of sharing media without Bluetooth pairing. Pure browser solution using Web Audio API for channel splitting and routing. Live: caytec.github.io/2headphones1audio
+
+FREESYSTEMDOCTOR (WINDOWS DIAGNOSTIC TOOL) — Open Source · GitHub Pages
+Comprehensive free Windows diagnostic and repair tool — alternative to predatory "PC cleaner" software. Scans hardware health, performance bottlenecks, system integrity, registry issues, and security vulnerabilities. One-click auto-fix for common problems. No subscriptions, no bloatware. Live: caytec.github.io/FreeSystemDoctor
+
 ═══════════════════════════════════════════════════════════════════════════════
 
 EDUCATION & CONTINUOUS LEARNING
