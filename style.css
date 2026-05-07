@@ -605,6 +605,67 @@ a:hover { color: var(--green); text-decoration: underline; }
 .hl-v { color: #e0907c; font-weight: 600; }  /* Witalność — red   */
 
 /* ═══════════════════════════════
+   Ko-fi Donate Button
+   ═══════════════════════════════ */
+.kofi-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 9px 16px;
+  background: linear-gradient(135deg, #ff5f5f 0%, #ff2d78 100%);
+  border: 1px solid rgba(255, 95, 95, 0.5);
+  border-radius: 6px;
+  color: white !important;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none !important;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(255, 45, 120, 0.25);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.kofi-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.kofi-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 45, 120, 0.45);
+  color: white !important;
+  text-decoration: none !important;
+  border-color: white;
+}
+
+.kofi-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.kofi-icon {
+  font-size: 16px;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+  animation: kofi-bounce 2s ease-in-out infinite;
+}
+
+@keyframes kofi-bounce {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%      { transform: translateY(-2px) rotate(3deg); }
+}
+
+.kofi-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════
    Open Source Banner
    ═══════════════════════════════ */
 .opensource-banner {
@@ -716,7 +777,7 @@ a:hover { color: var(--green); text-decoration: underline; }
 .slideshow-wrapper {
   position: relative;
   width: 100%;
-  height: 240px;
+  height: 320px;
   overflow: hidden;
   background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 50%, #16213e 100%);
 }
@@ -727,10 +788,6 @@ a:hover { color: var(--green); text-decoration: underline; }
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease-in-out, visibility 0.4s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
 }
 
 .slide.active {
@@ -741,8 +798,26 @@ a:hover { color: var(--green); text-decoration: underline; }
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  background:
+    linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(123, 47, 255, 0.05)),
+    repeating-linear-gradient(45deg, rgba(0, 212, 255, 0.03) 0 2px, transparent 2px 12px),
+    #0a0a1f;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 14px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .slide-card {
